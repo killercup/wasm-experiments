@@ -20,5 +20,6 @@ Some experiments after seeing [Rust PR #45905].
 
 - Why oh why can't I build no staticlib that is a `.wasm` file?
 - Is `undefined` really the best output format for a return value `&static str`?
+  - `undefined` is a really bad representation of a static string. However, a `&static str` is a fat pointer consisting of `(pointer to data, length of data)`. The caller therefore needs to allocate memory for the function to write this fat pointer into and then needs to extract the actual data from this info
 
 [Rust PR #45905]: https://github.com/rust-lang/rust/pull/45905
