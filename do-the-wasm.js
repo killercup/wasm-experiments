@@ -14,8 +14,10 @@ async function main(params) {
   const wasm_module = await WebAssembly.compile(code.buffer)
   const instance = await new WebAssembly.Instance(wasm_module, {})
 
-  info(`WASM file contains these exports:`, Object.keys(instance.exports))
-  if (!fn_name) { return }
+  if (!fn_name) {
+    info(`WASM file contains these exports:`, Object.keys(instance.exports))
+    return
+  }
 
   info(`Running ${fn_name} with these arguments:`, args)
   ensure(instance.exports[fn_name], `No ${fn_name} in WASM exports :(`)
