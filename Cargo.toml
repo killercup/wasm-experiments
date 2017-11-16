@@ -11,3 +11,4 @@ name = "hello-wasm"
 path = "main.rs"
 
 [dependencies]
+sha1 = "0.2.0"
