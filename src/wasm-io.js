@@ -1,9 +1,11 @@
-const { info, ensure } = require('./utils')
+const { info, trace, debug, ensure } = require('./utils')
 
 /**
+ * Copy C-like string
  *
- * @param {WebAssembly.Memory} memory
- * @param {number} ptr
+ * @param  {WebAssembly.Memory}  memory
+ * @param  {number}  ptr
+ * @return {string}
  */
 exports.copyCStr = (memory, ptr) => {
   const collectCString = function* () {
@@ -93,8 +95,8 @@ exports.getStr = (memory, ptr, len) => {
  * @param {WebAssembly.Memory} memory
  * @param {string} str
  */
-exports.newstring = (alloc, memory, str) => {
-  info(typeof str)
+exports.newString = (alloc, memory, str) => {
+  ensure(typeof str === 'string', `Can only allocate a string for, well, a string`)
   const memView = new Uint8Array(memory.buffer);
   let string_buffer = Buffer.from(str, 'utf8')
   let len = string_buffer.length
