@@ -6,7 +6,7 @@
   "scripts": {
     "prestart": "make",
     "pretest": "tsc --noEmit --project jsconfig.json",
-    "test": "node test.js"
+    "test": "ava"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,11 @@
     "@types/webassembly-js-api": "0.0.1"
   },
   "devDependencies": {
+    "ava": "^0.23.0",
     "typescript": "^2.6.1"
+  },
+  "ava": {
+      "files": ["tests/*.js"],
+      "source": ["src/*.js"]
   }
 }
