@@ -1,4 +1,5 @@
 const { info, trace, debug, ensure } = require('./utils')
+const { TextDecoder, TextEncoder } = require('text-encoding')
 
 /**
  * Copy C-like string
@@ -17,10 +18,10 @@ exports.copyCStr = (memory, ptr) => {
     }
   }
 
-  const buffer_as_u8 = new Uint8Array(collectCString())
-  const buffer_from_node = new Buffer(buffer_as_u8)
-  const buffer_as_utf8 = buffer_from_node.toString('utf8')
-  return buffer_as_utf8
+  const bufferAsU8 = new Uint8Array(collectCString())
+  const utf8Decoder = new TextDecoder("UTF-8")
+  const bufferAsUtf8 = utf8Decoder.decode(bufferAsU8)
+  return bufferAsUtf8
 }
 
 /**
@@ -31,7 +32,7 @@ exports.copyCStr = (memory, ptr) => {
  * @returns {[number, number]}
  */
 exports.extractSlice = (memory, offset) => {
-  const pointer_width = 4
+  const pointerWidth = 4
 
   /**
    * @param {Iterable<number>} iter
@@ -47,7 +48,7 @@ exports.extractSlice = (memory, offset) => {
    */
   const getI32 = function* (ptr) {
     const memView = new Uint8Array(memory.buffer);
-    for (let index = 0; index < pointer_width; index++) {
+    for (let index = 0; index < pointerWidth; index++) {
       if (memView[ptr] === undefined) {
         throw new Error(`Tried to read undef mem at ${ptr}`)
       }
@@ -56,7 +57,7 @@ exports.extractSlice = (memory, offset) => {
   }
 
   const ptr = iter_to_i32(getI32(offset))
-  const len = iter_to_i32(getI32(offset + pointer_width))
+  const len = iter_to_i32(getI32(offset + pointerWidth))
 
   return [ptr, len]
 }
@@ -82,10 +83,10 @@ exports.getStr = (memory, ptr, len) => {
     }
   }
 
-  const buffer_as_u8 = new Uint8Array(getData(ptr, len));
-  const buffer_from_node = new Buffer(buffer_as_u8);
-  const buffer_as_utf8 = buffer_from_node.toString('utf8');
-  return buffer_as_utf8;
+  const bufferAsU8 = new Uint8Array(getData(ptr, len));
+  const utf8Decoder = new TextDecoder("UTF-8");
+  const bufferAsUtf8 = utf8Decoder.decode(bufferAsU8);
+  return bufferAsUtf8;
 }
 
 /**
@@ -98,12 +99,13 @@ exports.getStr = (memory, ptr, len) => {
 exports.newString = (alloc, memory, str) => {
   ensure(typeof str === 'string', `Can only allocate a string for, well, a string`)
   const memView = new Uint8Array(memory.buffer);
-  let string_buffer = Buffer.from(str, 'utf8')
-  let len = string_buffer.length
-  let ptr = alloc(len)
+  const utf8Encoder = new TextEncoder("UTF-8")
+  const stringBuffer = utf8Encoder.encode(str)
+  const len = stringBuffer.length
+  const ptr = alloc(len)
 
   for (let i = 0; i < len; i++) {
-    memView[ptr + i] = string_buffer[i]
+    memView[ptr + i] = stringBuffer[i]
   }
 
   return ptr

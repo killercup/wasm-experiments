@@ -21,14 +21,20 @@
   "homepage": "https://github.com/killercup/wasm-experiments#readme",
   "dependencies": {
     "@types/node": "^8.0.53",
-    "@types/webassembly-js-api": "0.0.1"
+    "@types/text-encoding": "0.0.32",
+    "@types/webassembly-js-api": "0.0.1",
+    "text-encoding": "^0.6.4"
   },
   "devDependencies": {
     "ava": "^0.23.0",
     "typescript": "^2.6.1"
   },
   "ava": {
-      "files": ["tests/*.js"],
-      "source": ["src/*.js"]
+    "files": [
+      "tests/*.js"
+    ],
+    "source": [
+      "src/*.js"
+    ]
   }
 }
