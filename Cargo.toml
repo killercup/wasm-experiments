@@ -3,12 +3,5 @@ name = "hello-wasm"
 version = "0.1.0"
 authors = ["Pascal Hertleif <killercup@gmail.com>"]
 
-[lib]
-path = "lib.rs"
-
-[[bin]]
-name = "hello-wasm"
-path = "main.rs"
-
 [dependencies]
 sha1 = "0.2.0"
