@@ -24,7 +24,7 @@ test(`Hello Jan-Erik`, (t) => {
 
 test(`Hello UTF-8!`, (t) => {
   const hi = wrap(t.context.i.exports, "hi", ["CStr"], "CStr");
-  t.deepEqual(hi("Grüß Gott!"), "Grüß Gott!");
+  t.deepEqual(hi("G̸rü͢ß ͟Got͠t͡!"), "G̸rü͢ß ͟Got͠t͡!");
 });
 
 test(`sha1`, (t) => {
