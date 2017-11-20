@@ -34,6 +34,7 @@ async function main() {
     add: wrap(instance.exports, "add", ["i32", "i32"], "i32"),
     hi: wrap(instance.exports, "hi", ["CStr"], "CStr"),
     time: wrap(instance.exports, "time", [], "CStr"),
+    time_str: wrap(instance.exports, "time_str", [], "str"),
   };
 
   ensure(fns[fnName], `${fnName} has no wrapper, don't know how to call it :(`);

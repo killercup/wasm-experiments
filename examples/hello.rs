@@ -17,12 +17,12 @@ pub extern "C" fn add(x: i32, y: i32) -> i32 {
 
 #[no_mangle]
 pub fn time_string() -> String {
-    String::from("Es ist fünf vor Zwölf!!")
+    String::from("Es ist fünf vor Zwölf!")
 }
 
 #[no_mangle]
 pub fn time_str() -> &'static str {
-    "Es ist fünf vor Zwölf!!"
+    "Es ist fünf vor Zwölf!!!"
 }
 
 #[no_mangle]

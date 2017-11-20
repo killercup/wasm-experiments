@@ -5,6 +5,8 @@ const { TextDecoder, TextEncoder } = require("text-encoding");
  * @typedef {number} Pointer A pointer into WASM memory
  */
 
+const POINTER_WIDTH = exports.POINTER_WIDTH = 32 / 8;
+
 /**
  * Copy C-like string
  *
@@ -36,32 +38,23 @@ exports.copyCStr = (memory, ptr) => {
  * @returns {[Pointer, number]}
  */
 exports.extractSlice = (memory, inPointer) => {
-  const pointerWidth = 4;
-
   /**
-   * @param {Iterable<number>} iter
+   * @param {Uint8Array} bytes
    */
-  const iterToI32 = (iter) => {
-    const bytes = new Uint8Array(iter);
+  const iterToI32 = (bytes) => {
     const view = new DataView(bytes.buffer);
-    return view.getUint32(0);
+    return view.getUint32(0, true);
   };
 
   /**
    * @param {number} ptr
    */
-  const getI32 = function*(ptr) {
-    const memView = new Uint8Array(memory.buffer);
-    for (let index = 0; index < pointerWidth; index++) {
-      if (memView[ptr] === undefined) {
-        throw new Error(`Tried to read undef mem at ${ptr}`);
-      }
-      yield memView[ptr + index];
-    }
+  const getI32 = function(ptr) {
+    return new Uint8Array(memory.buffer).slice(ptr, ptr + POINTER_WIDTH);
   };
 
   const outPointer = iterToI32(getI32(inPointer));
-  const length = iterToI32(getI32(inPointer + pointerWidth));
+  const length = iterToI32(getI32(inPointer + POINTER_WIDTH));
 
   return [outPointer, length];
 };
