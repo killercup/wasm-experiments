@@ -43,7 +43,12 @@ exports.wrap = function wrap(exports, fnIdent, argTypes = [], returnType = "()")
     const transformedArgs = argTypes
       .map((type, index) => typeConversions[type].arg(args[index], exports));
 
+    let outParam;
+    if (typeof typeConversions[returnType].outParam === "function") {
+      outParam = typeConversions[returnType].outParam(transformedArgs, exports);
+    }
+
     const res = fn(...transformedArgs);
-    return typeConversions[returnType].ret(res, exports);
+    return typeConversions[returnType].ret(outParam || res, exports);
   };
 };

@@ -1,5 +1,5 @@
 const { ensure, unimplemented } = require("./utils");
-const { newString, copyCStr } = require("./wasm-io");
+const { newString, copyCStr, extractSlice, getStr, POINTER_WIDTH } = require("./wasm-io");
 
 /**
  * @typedef {number} Pointer A pointer into WASM memory
@@ -11,15 +11,39 @@ const { newString, copyCStr } = require("./wasm-io");
 const typeConversions = {
   "&str": {
     /**
-     * @param {any} data
+     * @param {number} data
      * @param {WebAssembly.Module} exports
      */
-    arg(data, exports) { unimplemented(); },
+    arg(data, exports) {
+      unimplemented();
+    },
     /**
-     * @param {any} data
+     * @param {Pointer} data
      * @param {WebAssembly.Module} exports
+     * @return {string}
      */
-    ret(data, exports) { unimplemented(); },
+    ret(data, exports) {
+      // @ts-ignore -- yes accessing these exports works
+      const { memory } = exports;
+      ensure(memory, "You need to export the main memory to pass strings to WASM");
+      const [ptr, len] = extractSlice(memory, data);
+      return getStr(memory, ptr, len);
+    },
+    /**
+     * @param {Array<any>} args
+     * @param {WebAssembly.Module} exports
+     * @return {Pointer}
+     */
+    outParam(args, exports) {
+      // @ts-ignore -- yes accessing these exports works
+      const { alloc, memory } = exports;
+      ensure(alloc, "You need to export an `alloc` function to get strings from WASM");
+      ensure(memory, "You need to export the main memory to get strings from WASM");
+
+      const ptr = alloc(2 * POINTER_WIDTH);
+      args.push(ptr);
+      return ptr;
+    },
   },
   "()": {
     simpleReturn: true,
