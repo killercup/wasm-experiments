@@ -6,3 +6,6 @@ example/hello.rs:
 	wasm2wat $(WAT_ARGS) hello-wasm.wasm > hello-wasm.wat
 	wasm-gc hello-wasm.wasm hello-wasm.gc.wasm
 	wasm2wat $(WAT_ARGS) hello-wasm.gc.wasm > hello-wasm.gc.wat
+
+test: example/hello.rs
+	npm test
