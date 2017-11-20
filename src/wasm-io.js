@@ -102,11 +102,12 @@ exports.newString = (alloc, memory, str) => {
   const utf8Encoder = new TextEncoder("UTF-8")
   const stringBuffer = utf8Encoder.encode(str)
   const len = stringBuffer.length
-  const ptr = alloc(len)
+  const ptr = alloc(len+1)
 
   for (let i = 0; i < len; i++) {
     memView[ptr + i] = stringBuffer[i]
   }
+  memView[ptr+len] = 0;
 
   return ptr
 }

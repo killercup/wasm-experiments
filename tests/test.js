@@ -24,14 +24,14 @@ test(`Hello Jan-Erik`, async (t) => {
 })
 
 // Buffer-to-UTF8 doesn't work correctly yet
-test.failing(`Hello UTF-8!`, async (t) => {
+test(`Hello UTF-8!`, async (t) => {
   const i = await instantiate("./hello-wasm.wasm")
   const hi = wrap(t.context.i.exports, 'hi', ['CStr'], 'CStr')
   t.deepEqual(hi("Grüß Gott!"), "Grüß Gott!")
 })
 
 // Dafuq?
-test.failing(`sha1`, async (t) => {
+test(`sha1`, async (t) => {
   const i = await instantiate("./hello-wasm.wasm")
   const digest = wrap(t.context.i.exports, 'digest', ['CStr'], 'CStr')
   t.deepEqual(digest("foobar"), "8843d7f92416211de9ebb963ff4ce28125932878")
