@@ -2,10 +2,14 @@ const { info, trace, debug, ensure } = require("./utils");
 const { TextDecoder, TextEncoder } = require("text-encoding");
 
 /**
+ * @typedef {number} Pointer A pointer into WASM memory
+ */
+
+/**
  * Copy C-like string
  *
  * @param  {WebAssembly.Memory}  memory
- * @param  {number}  ptr
+ * @param  {Pointer}  ptr
  * @return {string}
  */
 exports.copyCStr = (memory, ptr) => {
@@ -28,10 +32,10 @@ exports.copyCStr = (memory, ptr) => {
  * Retrieve `[ptr, len]` from position `offset` in `memory`
  *
  * @param {WebAssembly.Memory} memory
- * @param {number} offset
- * @returns {[number, number]}
+ * @param {Pointer} inPointer
+ * @returns {[Pointer, number]}
  */
-exports.extractSlice = (memory, offset) => {
+exports.extractSlice = (memory, inPointer) => {
   const pointerWidth = 4;
 
   /**
@@ -56,23 +60,23 @@ exports.extractSlice = (memory, offset) => {
     }
   };
 
-  const pointer = iterToI32(getI32(offset));
-  const length = iterToI32(getI32(offset + pointerWidth));
+  const outPointer = iterToI32(getI32(inPointer));
+  const length = iterToI32(getI32(inPointer + pointerWidth));
 
-  return [pointer, length];
+  return [outPointer, length];
 };
 
 /**
  * Get Rust String
  *
  * @param {WebAssembly.Memory} memory
- * @param {number} pointer
+ * @param {Pointer} pointer
  * @param {number} length
  * @return {string}
  */
 exports.getStr = (memory, pointer, length) => {
   /**
-   * @param {number} ptr
+   * @param {Pointer} ptr
    * @param {number} len
    */
   const getData = function*(ptr, len) {

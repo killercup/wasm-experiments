@@ -1,60 +1,17 @@
-const { ensure } = require("./utils");
-const { newString, copyCStr } = require("./wasm-io");
-
-/**
- * Convert JS -> WASM types
- *
- * @param  {'i32' | 'CStr'}  type  Argument type
- * @param  {*}  data  Argument data
- * @param  {WebAssembly.Module}  exports  WASM exports for helper methods
- * @return {*}
- */
-function convertArg(type, data, exports) {
-  switch (type) {
-    case "i32":
-      return data;
-    case "CStr":
-      // @ts-ignore -- yes accessing these exports works
-      const { alloc, memory } = exports;
-      ensure(alloc, "You need to export an `alloc` function to pass strings to WASM");
-      ensure(memory, "You need to export the main memory to pass strings to WASM");
-      return newString(alloc, memory, data);
-    default:
-      throw new Error(`Cannot convert ${type} to something I can pass to WASM`);
-  }
-}
-
-/**
- * Convert JS -> WASM types
- *
- * @param  {'i32' | 'CStr' | '()'}  type  Return type
- * @param  {*}  data  Return data
- * @param  {WebAssembly.Module}  exports  WASM exports for helper methods
- * @return {*}
- */
-function convertReturn(type, data, exports) {
-  switch (type) {
-    case "()":
-    case "i32":
-      return data;
-    case "CStr":
-      // @ts-ignore -- yes accessing these exports works
-      const { memory } = exports;
-      ensure(memory, "You need to export the main memory to pass strings to WASM");
-      return copyCStr(memory, data);
-    default:
-      throw new Error(`Cannot convert ${type} to something I can pass to WASM`);
-  }
-}
+const { ensure, unimplemented } = require("./utils");
+const { typeConversions } = require("./type-converter");
 
 /**
  * Wrap WASM function
  *
+ * @typedef {keyof typeof typeConversions} RustType
  * @param  {WebAssembly.Module}  exports  WASM exports
  * @param  {string}  fnIdent  Function name
- * @param  {Array<'i32' | 'CStr'>}  argTypes  Function arguments
- * @param  {'i32' | 'CStr' | '()'}  returnType  Return type
+ * @param  {Array<RustType>}  argTypes  Function arguments
+ * @param  {RustType}  returnType  Return type
  * @return {Function}
+ *
+ * @todo `RustType` is currently a `string`, but should be somethine like `"i32" | "CStr"`
  *
  * @example
  * const add = wrap(instance.exports, 'add', ['i32', 'i32'], 'i32')
@@ -66,11 +23,14 @@ function convertReturn(type, data, exports) {
 exports.wrap = function wrap(exports, fnIdent, argTypes = [], returnType = "()") {
   // @ts-ignore -- Indexing a WASM module actually works
   const fn = exports[fnIdent];
-  ensure(fn, `WASM module doesn't export a ${fnIdent} function`);
 
-  // Shortcut: I32 -> I32
-  const simpleArgs = argTypes.every((arg) => arg === "i32");
-  const simpleReturn = returnType === "()" || returnType === "i32";
+  ensure(fn, `WASM module doesn't export a ${fnIdent} function`);
+  ensure(typeConversions[returnType], `No support for ${returnType}`);
+  argTypes.forEach((arg) => ensure(typeConversions[arg], `No support for ${arg}`));
+
+  // Shortcut: No conversion necessary
+  const simpleArgs = argTypes.every((arg) => typeConversions[arg].simpleArgs) || false;
+  const simpleReturn = typeConversions[returnType].simpleReturn || false;
   if (simpleArgs && simpleReturn) {
     return fn;
   }
@@ -81,9 +41,9 @@ exports.wrap = function wrap(exports, fnIdent, argTypes = [], returnType = "()")
       `arguments, ${args.length} given`);
 
     const transformedArgs = argTypes
-      .map((type, index) => convertArg(type, args[index], exports));
+      .map((type, index) => typeConversions[type].arg(args[index], exports));
 
     const res = fn(...transformedArgs);
-    return convertReturn(returnType, res, exports);
+    return typeConversions[returnType].ret(res, exports);
   };
 };
