@@ -41,3 +41,9 @@ test(`owned string`, (t) => {
   const time = wrap(t.context.i.exports, "time_string", [], "String");
   t.deepEqual(time(), "Es ist fünf vor Zwölf!");
 });
+
+test(`slices and Vecs`, (t) => {
+  const digest = wrap(t.context.i.exports, "digest_bytes", ["&[u8]"], "Vec<u8>");
+  t.deepEqual(digest(new Uint8Array([0x00, 0x00, 0x00, 0x00])),
+    new Uint8Array([13, 37, 42, 42]));
+});

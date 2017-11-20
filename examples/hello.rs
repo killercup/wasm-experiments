@@ -63,3 +63,8 @@ pub extern "C" fn digest(data: *mut c_char) -> *mut c_char {
         s.into_raw()
     }
 }
+
+#[no_mangle]
+pub extern "C" fn digest_bytes(data: &[u8]) -> Vec<u8> {
+    vec![13, 37, 42, 42]
+}

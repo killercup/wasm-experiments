@@ -2,7 +2,6 @@
 
 const { debug, info, error } = require("./src/utils");
 const { instantiate } = require("./src/wasm");
-const { copyCStr, extractSlice, getStr, newString } = require("./src/wasm-io");
 const { wrap } = require("./src/wrap");
 
 /**
