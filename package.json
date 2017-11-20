@@ -5,7 +5,7 @@
   "main": "do-the-wasm.js",
   "scripts": {
     "prestart": "make",
-    "pretest": "tsc --noEmit --project jsconfig.json",
+    "pretest": "tsc --noEmit --project jsconfig.json && tslint --project jsconfig.json",
     "test": "ava"
   },
   "repository": {
@@ -27,7 +27,8 @@
   },
   "devDependencies": {
     "ava": "^0.23.0",
-    "typescript": "^2.6.1"
+    "typescript": "^2.6.1",
+    "tslint": "^5.8.0"
   },
   "ava": {
     "files": [
