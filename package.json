@@ -1,0 +1,40 @@
+{
+  "name": "hello-wasm",
+  "version": "1.0.0",
+  "description": "Some experiments after seeing Rust PR #45905.",
+  "main": "do-the-wasm.js",
+  "scripts": {
+    "prestart": "make",
+    "pretest": "tsc --noEmit --project jsconfig.json",
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/killercup/wasm-experiments.git"
+  },
+  "keywords": [],
+  "author": "Pascal Hertleif <killercup@gmail.com> (http://pascalhertleif.de/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/killercup/wasm-experiments/issues"
+  },
+  "homepage": "https://github.com/killercup/wasm-experiments#readme",
+  "dependencies": {
+    "@types/node": "^8.0.53",
+    "@types/text-encoding": "0.0.32",
+    "@types/webassembly-js-api": "0.0.1",
+    "text-encoding": "^0.6.4"
+  },
+  "devDependencies": {
+    "ava": "^0.23.0",
+    "typescript": "^2.6.1"
+  },
+  "ava": {
+    "files": [
+      "tests/*.js"
+    ],
+    "source": [
+      "src/*.js"
+    ]
+  }
+}
