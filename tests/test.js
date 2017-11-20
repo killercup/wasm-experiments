@@ -36,3 +36,8 @@ test(`string slice`, (t) => {
   const time = wrap(t.context.i.exports, "time_str", [], "&str");
   t.deepEqual(time(), "Es ist fünf vor Zwölf!!!");
 });
+
+test(`owned string`, (t) => {
+  const time = wrap(t.context.i.exports, "time_string", [], "String");
+  t.deepEqual(time(), "Es ist fünf vor Zwölf!");
+});
