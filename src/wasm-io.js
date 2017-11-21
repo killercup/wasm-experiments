@@ -5,7 +5,29 @@ const { TextDecoder, TextEncoder } = require("text-encoding");
  * @typedef {number} Pointer A pointer into WASM memory
  */
 
-const POINTER_WIDTH = exports.POINTER_WIDTH = 32 / 8;
+const POINTER_WIDTH = 32 / 8;
+
+/**
+ * Write pointer to position in memory
+ *
+ * @param {WebAssembly.Memory} memory
+ * @param {Pointer} destination
+ * @param {Pointer} data
+ * @returns {void}
+ */
+function writeI32(memory, destination, data) {
+  const memoryView = new Uint8Array(memory.buffer);
+  let buffer = new ArrayBuffer(POINTER_WIDTH);
+
+  const slicePtr = new DataView(buffer);
+  slicePtr.setInt32(0, data, true);
+
+  let byteBuffer = new Uint8Array(buffer);
+
+  for (let i = 0; i < POINTER_WIDTH; i++) {
+    memoryView[destination + i] = byteBuffer[i];
+  }
+}
 
 /**
  * Retrieve `[ptr, len]` from position `offset` in `memory`
@@ -14,7 +36,7 @@ const POINTER_WIDTH = exports.POINTER_WIDTH = 32 / 8;
  * @param {Pointer} inPointer
  * @returns {[Pointer, number]}
  */
-exports.extractSlice = function extractSlice(memory, inPointer) {
+function extractSlice(memory, inPointer) {
   /**
    * @param {Uint8Array} bytes
    */
@@ -34,7 +56,7 @@ exports.extractSlice = function extractSlice(memory, inPointer) {
   const length = iterToI32(getI32(inPointer + POINTER_WIDTH));
 
   return [outPointer, length];
-};
+}
 
 /**
  * Create a slice of `[ptr, len]` from data (by allocating a buffer)
@@ -44,21 +66,21 @@ exports.extractSlice = function extractSlice(memory, inPointer) {
  * @param {(length: number) => Pointer} alloc
  * @returns {Pointer} Pointer to `[Pointer, number]` pair
  */
-exports.newSlice = function newSlice(memory, alloc, data) {
+function newSlice(memory, alloc, data) {
   const memView = new Uint8Array(memory.buffer);
-  const sliceData = alloc(data.length);
   const len = data.length;
+  const sliceData = alloc(len);
 
   for (let i = 0; i < len; i++) {
     memView[sliceData + i] = data[i];
   }
 
   const ptr = alloc(2 * POINTER_WIDTH);
-  memView[ptr] = sliceData;
-  memView[ptr + 1] = len;
+  writeI32(memory, ptr, sliceData);
+  writeI32(memory, ptr + POINTER_WIDTH, len);
 
   return ptr;
-};
+}
 
 /**
  * @param {WebAssembly.Memory} memory
@@ -66,7 +88,7 @@ exports.newSlice = function newSlice(memory, alloc, data) {
  * @param {number} length
  * @return {Uint8Array}
  */
-exports.getSliceData = function getSliceData(memory, pointer, length) {
+function getSliceData(memory, pointer, length) {
   /**
    * @param {Pointer} ptr
    * @param {number} len
@@ -80,7 +102,7 @@ exports.getSliceData = function getSliceData(memory, pointer, length) {
   };
 
   return new Uint8Array(getData(pointer, length));
-};
+}
 
 /**
  * Get Rust String
@@ -90,9 +112,17 @@ exports.getSliceData = function getSliceData(memory, pointer, length) {
  * @param {number} length
  * @return {string}
  */
-exports.getStr = function getStr(memory, pointer, length) {
-  const bufferAsU8 = exports.getSliceData(memory, pointer, length);
+function getStr(memory, pointer, length) {
+  const bufferAsU8 = getSliceData(memory, pointer, length);
   const utf8Decoder = new TextDecoder("UTF-8");
   const bufferAsUtf8 = utf8Decoder.decode(bufferAsU8);
   return bufferAsUtf8;
+}
+
+module.exports = {
+  POINTER_WIDTH,
+  extractSlice,
+  getSliceData,
+  getStr,
+  newSlice,
 };

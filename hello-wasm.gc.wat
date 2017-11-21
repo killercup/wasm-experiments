@@ -70,7 +70,7 @@
                   (set_local $l4
                     (select
                       (tee_local $l2
-                        (call $f164
+                        (call $f166
                           (i32.load
                             (get_local $p0))
                           (get_local $l4)
@@ -99,7 +99,7 @@
                   (br_if $B8
                     (i32.eqz
                       (tee_local $l4
-                        (call $f118
+                        (call $f120
                           (get_local $l1)))))
                   (set_local $l2
                     (get_local $l4))
@@ -137,7 +137,7 @@
               (i32.const 8))
             (get_local $l3))
           (drop
-            (call $f108
+            (call $f110
               (i32.add
                 (get_local $l4)
                 (get_local $l0))
@@ -149,11 +149,11 @@
               (get_local $l5)
               (i32.const 16)))
           (return))
-        (call $f159
+        (call $f161
           (i32.const 144)
           (i32.const 17))
         (unreachable))
-      (call $f136
+      (call $f138
         (i32.const 376))
       (unreachable))
     (unreachable)
@@ -187,7 +187,7 @@
                 (i32.const -1)))
             (br_if $B2
               (tee_local $l0
-                (call $f164
+                (call $f166
                   (i32.load
                     (get_local $p0))
                   (get_local $l0)
@@ -200,7 +200,7 @@
           (br_if $B0
             (i32.eqz
               (tee_local $l0
-                (call $f118
+                (call $f120
                   (i32.const 4)))))
           (set_local $l1
             (i32.const 4)))
@@ -218,7 +218,7 @@
             (get_local $l2)
             (i32.const 16)))
         (return))
-      (call $f136
+      (call $f138
         (i32.const 376))
       (unreachable))
     (unreachable)
@@ -281,7 +281,7 @@
         (get_local $l0)
         (i32.const 28))
       (i32.const 2))
-    (call $f134
+    (call $f136
       (i32.add
         (get_local $l0)
         (i32.const 8))
@@ -348,14 +348,14 @@
         (get_local $l0)
         (i32.const 36))
       (i32.const 2))
-    (call $f134
+    (call $f136
       (i32.add
         (get_local $l0)
         (i32.const 16))
       (i32.const 360))
     (unreachable))
   (func $f5 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
-    (call $f138
+    (call $f140
       (get_local $p1)
       (i32.load
         (get_local $p0))
@@ -447,7 +447,7 @@
               (i32.const 4)))
           (br_if $L2
             (i32.eqz
-              (call $f144
+              (call $f146
                 (get_local $l1)
                 (get_local $l2)
                 (i32.add
@@ -687,7 +687,7 @@
       (i64.load offset=8
         (get_local $l2)))
     (set_local $p1
-      (call $f144
+      (call $f146
         (i32.add
           (get_local $l2)
           (i32.const 36))
@@ -733,7 +733,7 @@
                   (br_if $B6
                     (i32.eqz
                       (tee_local $l1
-                        (call $f105))))
+                        (call $f107))))
                   (br_if $B6
                     (i32.ne
                       (i32.load
@@ -742,7 +742,7 @@
                   (br_if $B0
                     (i32.eqz
                       (tee_local $l1
-                        (call $f105))))
+                        (call $f107))))
                   (br_if $B5
                     (i32.ne
                       (i32.load
@@ -801,7 +801,7 @@
                 (i32.store offset=24
                   (get_local $l3)
                   (tee_local $l1
-                    (call $f88)))
+                    (call $f90)))
                 (i32.store
                   (i32.add
                     (get_local $l3)
@@ -819,7 +819,7 @@
                 (i32.store offset=44
                   (get_local $l3)
                   (i32.const 1))
-                (call $f96
+                (call $f98
                   (i32.add
                     (get_local $l3)
                     (i32.const 8))
@@ -841,7 +841,7 @@
                     (i32.ne
                       (get_local $l2)
                       (i32.const 1)))
-                  (call $f91
+                  (call $f93
                     (i32.add
                       (get_local $l3)
                       (i32.const 24))))
@@ -864,7 +864,7 @@
           (i32.store offset=16
             (get_local $l3)
             (tee_local $l1
-              (call $f88)))
+              (call $f90)))
           (i32.store
             (i32.add
               (get_local $l3)
@@ -882,7 +882,7 @@
           (i32.store offset=44
             (get_local $l3)
             (i32.const 1))
-          (call $f96
+          (call $f98
             (i32.add
               (get_local $l3)
               (i32.const 24))
@@ -903,7 +903,7 @@
             (i32.ne
               (get_local $l2)
               (i32.const 1)))
-          (call $f91
+          (call $f93
             (i32.add
               (get_local $l3)
               (i32.const 16))))
@@ -954,10 +954,10 @@
                 (i32.load offset=4
                   (i32.load offset=4
                     (get_local $l1)))))
-            (call $f121
+            (call $f123
               (i32.load
                 (get_local $l1))))
-          (call $f121
+          (call $f123
             (get_local $l1)))
         (i32.store offset=4
           (i32.const 0)
@@ -1013,13 +1013,13 @@
           (get_local $l3)
           (i32.const 60))
         (i32.const 2))
-      (call $f77
+      (call $f79
         (i32.add
           (get_local $l3)
           (i32.const 40))
         (i32.const 3608))
       (unreachable))
-    (call $f35)
+    (call $f37)
     (unreachable))
   (func $add (export "add") (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (i32.const 42))
@@ -1036,7 +1036,7 @@
       (br_if $B0
         (i32.eqz
           (tee_local $l1
-            (call $f118
+            (call $f120
               (i32.const 24)))))
       (i32.store offset=20
         (get_local $l4)
@@ -1047,7 +1047,7 @@
       (i32.store offset=24
         (get_local $l4)
         (i32.const 0))
-      (call $f123
+      (call $f125
         (i32.add
           (get_local $l4)
           (i32.const 16))
@@ -1176,7 +1176,7 @@
         (br_if $B1
           (i32.eqz
             (tee_local $l2
-              (call $f118
+              (call $f120
                 (i32.const 25)))))
         (i32.store offset=12
           (get_local $l4)
@@ -1187,7 +1187,7 @@
         (i32.store offset=16
           (get_local $l4)
           (i32.const 0))
-        (call $f123
+        (call $f125
           (i32.add
             (get_local $l4)
             (i32.const 8))
@@ -1248,7 +1248,7 @@
         (set_local $l1
           (i32.load offset=12
             (get_local $l4)))
-        (call $f29
+        (call $f31
           (i32.add
             (get_local $l4)
             (i32.const 24))
@@ -1268,7 +1268,7 @@
         (i32.store offset=16
           (get_local $l4)
           (get_local $l2))
-        (call $f31
+        (call $f33
           (get_local $l4)
           (i32.add
             (get_local $l4)
@@ -1328,13 +1328,13 @@
           (br_if $B0
             (i32.eqz
               (tee_local $p0
-                (call $f118
+                (call $f120
                   (get_local $p0)))))
           (return
             (get_local $p0)))
         (return
           (i32.const 1)))
-      (call $f136
+      (call $f138
         (i32.const 376))
       (unreachable))
     (unreachable)
@@ -1344,7 +1344,7 @@
       (br_if $B0
         (i32.eqz
           (get_local $p1)))
-      (call $f121
+      (call $f123
         (get_local $p0))))
   (func $digest (export "digest") (type $t9) (param $p0 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32) (local $l7 i32) (local $l8 i32) (local $l9 i32) (local $l10 i32) (local $l11 i64) (local $l12 i64)
@@ -1383,14 +1383,14 @@
     (set_local $l8
       (i32.const 0))
     (drop
-      (call $f110
+      (call $f112
         (i32.add
           (get_local $l10)
           (i32.const 224))
         (i32.const 0)
         (i32.const 64)))
     (drop
-      (call $f108
+      (call $f110
         (i32.add
           (get_local $l10)
           (i32.const 136))
@@ -1418,7 +1418,7 @@
       (get_local $l10)
       (i32.const 0))
     (drop
-      (call $f108
+      (call $f110
         (i32.add
           (get_local $l10)
           (i32.const 40))
@@ -1493,7 +1493,7 @@
                                   (i64.load offset=8
                                     (get_local $l10))
                                   (i64.const 64)))
-                              (call $f116
+                              (call $f118
                                 (get_local $l0)
                                 (get_local $p0))
                               (br $B14))
@@ -1581,7 +1581,7 @@
                       (get_local $l10)
                       (get_local $l11))
                     (drop
-                      (call $f110
+                      (call $f112
                         (i32.add
                           (get_local $l10)
                           (i32.const 224))
@@ -1708,14 +1708,14 @@
                           (i32.store8 offset=351
                             (get_local $l10)
                             (get_local $l1))
-                          (call $f116
+                          (call $f118
                             (i32.add
                               (get_local $l10)
                               (i32.const 200))
                             (i32.add
                               (get_local $l10)
                               (i32.const 224)))
-                          (call $f116
+                          (call $f118
                             (i32.add
                               (get_local $l10)
                               (i32.const 200))
@@ -1750,7 +1750,7 @@
                       (i32.store8 offset=287
                         (get_local $l10)
                         (get_local $l1))
-                      (call $f116
+                      (call $f118
                         (i32.add
                           (get_local $l10)
                           (i32.const 200))
@@ -1855,7 +1855,7 @@
                         (get_local $l10)
                         (i32.const 200)))
                     (br_if $B7
-                      (call $f144
+                      (call $f146
                         (i32.add
                           (get_local $l10)
                           (i32.const 132))
@@ -1895,14 +1895,14 @@
                           (br_if $B22
                             (i32.eqz
                               (get_local $l8)))
-                          (call $f121
+                          (call $f123
                             (i32.load offset=136
                               (get_local $l10)))
                           (br $B22))
                         (br_if $B3
                           (i32.eqz
                             (tee_local $l9
-                              (call $f164
+                              (call $f166
                                 (i32.load offset=136
                                   (get_local $l10))
                                 (get_local $l8)
@@ -1923,7 +1923,7 @@
                           (i32.add
                             (get_local $l10)
                             (i32.const 144)))))
-                    (call $f29
+                    (call $f31
                       (i32.add
                         (get_local $l10)
                         (i32.const 136))
@@ -1943,7 +1943,7 @@
                     (i32.store offset=232
                       (get_local $l10)
                       (get_local $l8))
-                    (call $f31
+                    (call $f33
                       (get_local $l10)
                       (i32.add
                         (get_local $l10)
@@ -1958,21 +1958,21 @@
                         (i32.const 352)))
                     (return
                       (get_local $p0)))
-                  (call $f131
+                  (call $f133
                     (get_local $l9)
                     (i32.const 0))
                   (unreachable))
-                (call $f131
+                (call $f133
                   (get_local $l8)
                   (i32.const 128))
                 (unreachable))
-              (call $f131
+              (call $f133
                 (get_local $l8)
                 (i32.const 64))
               (unreachable))
             (call $f4)
             (unreachable))
-          (call $f136
+          (call $f138
             (i32.const 248))
           (unreachable))
         (set_local $l1
@@ -2000,7 +2000,7 @@
             (get_local $l10)
             (i32.const 224)))
         (unreachable))
-      (call $f132
+      (call $f134
         (i32.const 4324)
         (get_local $l8)
         (i32.const 128))
@@ -2013,7 +2013,7 @@
       (br_if $B0
         (i32.eqz
           (tee_local $l0
-            (call $f118
+            (call $f120
               (i32.const 4)))))
       (i32.store align=1
         (get_local $l0)
@@ -2030,7 +2030,25 @@
       (return))
     (unreachable)
     (unreachable))
-  (func $f20 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $echo_str (export "echo_str") (type $t8) (param $p0 i32) (param $p1 i32)
+    (i64.store align=4
+      (get_local $p0)
+      (i64.load align=4
+        (get_local $p1))))
+  (func $is_fancy (export "is_fancy") (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+    (block $B0
+      (br_if $B0
+        (i32.eqz
+          (get_local $p1)))
+      (br_if $B0
+        (i32.lt_u
+          (i32.load offset=4
+            (get_local $p0))
+          (i32.const 5)))
+      (return
+        (i32.const 1)))
+    (i32.const 0))
+  (func $f22 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32) (local $l7 i32) (local $l8 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -2052,7 +2070,7 @@
                         (br_if $B9
                           (i32.eqz
                             (tee_local $l5
-                              (call $f118
+                              (call $f120
                                 (i32.const 4)))))
                         (i32.store offset=68
                           (get_local $l7)
@@ -2063,7 +2081,7 @@
                         (i32.store offset=72
                           (get_local $l7)
                           (i32.const 0))
-                        (call $f123
+                        (call $f125
                           (i32.add
                             (get_local $l7)
                             (i32.const 64))
@@ -2153,14 +2171,14 @@
                           (i64.load offset=64
                             (get_local $l7)))
                         (set_local $l1
-                          (call $f25
+                          (call $f27
                             (i32.add
                               (get_local $l7)
                               (i32.const 40))))
                         (br_if $B8
                           (i32.eqz
                             (tee_local $l5
-                              (call $f23))))
+                              (call $f25))))
                         (block $B10
                           (block $B11
                             (br_if $B11
@@ -2191,7 +2209,7 @@
                         (br_if $B7
                           (i32.eqz
                             (tee_local $l5
-                              (call $f23))))
+                              (call $f25))))
                         (block $B12
                           (block $B13
                             (br_if $B13
@@ -2235,7 +2253,7 @@
                             (i32.ne
                               (get_local $l0)
                               (i32.const 1)))
-                          (call $f27
+                          (call $f29
                             (get_local $l3)))
                         (i64.store align=4
                           (i32.add
@@ -2248,7 +2266,7 @@
                         (i32.store
                           (get_local $l5)
                           (i32.const 0))
-                        (call $f107
+                        (call $f109
                           (i32.const 8))
                         (br_if $B1
                           (i32.eq
@@ -2275,7 +2293,7 @@
                         (br $B3))
                       (unreachable)
                       (unreachable))
-                    (call $f35)
+                    (call $f37)
                     (unreachable))
                   (i32.store
                     (get_local $l1)
@@ -2289,20 +2307,20 @@
                       (i32.ne
                         (get_local $l5)
                         (i32.const 1)))
-                    (call $f27
+                    (call $f29
                       (i32.add
                         (get_local $l7)
                         (i32.const 48))))
-                  (call $f35)
+                  (call $f37)
                   (unreachable))
-                (call $f24)
+                (call $f26)
                 (unreachable))
-              (call $f32
+              (call $f34
                 (i32.const 4096)
                 (i32.const 38)
                 (i32.const 4136))
               (unreachable))
-            (call $f26)
+            (call $f28)
             (unreachable))
           (set_local $l8
             (i32.const 10))
@@ -2495,7 +2513,7 @@
                                                                                                                                                                                                                                                                                                                         (set_local $l8
                                                                                                                                                                                                                                                                                                                           (i32.const 59))
                                                                                                                                                                                                                                                                                                                         (br $L15))
-                                                                                                                                                                                                                                                                                                                      (call $f27
+                                                                                                                                                                                                                                                                                                                      (call $f29
                                                                                                                                                                                                                                                                                                                         (i32.add
                                                                                                                                                                                                                                                                                                                           (get_local $l7)
                                                                                                                                                                                                                                                                                                                           (i32.const 40)))
@@ -2537,7 +2555,7 @@
                                                                                                                                                                                                                                                                                                                 (set_local $l8
                                                                                                                                                                                                                                                                                                                   (i32.const 54))
                                                                                                                                                                                                                                                                                                                 (br $L15))
-                                                                                                                                                                                                                                                                                                              (call $f27
+                                                                                                                                                                                                                                                                                                              (call $f29
                                                                                                                                                                                                                                                                                                                 (i32.add
                                                                                                                                                                                                                                                                                                                   (get_local $l7)
                                                                                                                                                                                                                                                                                                                   (i32.const 40)))
@@ -2576,7 +2594,7 @@
                                                                                                                                                                                                                                                                                                     (br_if $B71
                                                                                                                                                                                                                                                                                                       (i32.eqz
                                                                                                                                                                                                                                                                                                         (tee_local $l1
-                                                                                                                                                                                                                                                                                                          (call $f22))))
+                                                                                                                                                                                                                                                                                                          (call $f24))))
                                                                                                                                                                                                                                                                                                     (set_local $l8
                                                                                                                                                                                                                                                                                                       (i32.const 5))
                                                                                                                                                                                                                                                                                                     (br $L15))
@@ -2636,7 +2654,7 @@
                                                                                                                                                                                                                                                                                           (br_if $B32
                                                                                                                                                                                                                                                                                             (i32.eqz
                                                                                                                                                                                                                                                                                               (tee_local $l5
-                                                                                                                                                                                                                                                                                                (call $f22))))
+                                                                                                                                                                                                                                                                                                (call $f24))))
                                                                                                                                                                                                                                                                                           (set_local $l8
                                                                                                                                                                                                                                                                                             (i32.const 61))
                                                                                                                                                                                                                                                                                           (br $L15))
@@ -2678,7 +2696,7 @@
                                                                                                                                                                                                                                                                                     (br_if $B29
                                                                                                                                                                                                                                                                                       (i32.eqz
                                                                                                                                                                                                                                                                                         (tee_local $l5
-                                                                                                                                                                                                                                                                                          (call $f34))))
+                                                                                                                                                                                                                                                                                          (call $f36))))
                                                                                                                                                                                                                                                                                     (set_local $l8
                                                                                                                                                                                                                                                                                       (i32.const 65))
                                                                                                                                                                                                                                                                                     (br $L15))
@@ -2760,7 +2778,7 @@
                                                                                                                                                                                                                                                                     (br_if $B19
                                                                                                                                                                                                                                                                       (i32.eqz
                                                                                                                                                                                                                                                                         (tee_local $l5
-                                                                                                                                                                                                                                                                          (call $f34))))
+                                                                                                                                                                                                                                                                          (call $f36))))
                                                                                                                                                                                                                                                                     (set_local $l8
                                                                                                                                                                                                                                                                       (i32.const 78))
                                                                                                                                                                                                                                                                     (br $L15))
@@ -2815,7 +2833,7 @@
                                                                                                                                                                                                                                                         (set_local $l8
                                                                                                                                                                                                                                                           (i32.const 76))
                                                                                                                                                                                                                                                         (br $L15))
-                                                                                                                                                                                                                                                      (call $f27
+                                                                                                                                                                                                                                                      (call $f29
                                                                                                                                                                                                                                                         (i32.add
                                                                                                                                                                                                                                                           (get_local $l7)
                                                                                                                                                                                                                                                           (i32.const 64)))
@@ -2827,7 +2845,7 @@
                                                                                                                                                                                                                                                         (i32.load8_u
                                                                                                                                                                                                                                                           (get_local $l2))))
                                                                                                                                                                                                                                                     (br $B33))
-                                                                                                                                                                                                                                                  (call $f106
+                                                                                                                                                                                                                                                  (call $f108
                                                                                                                                                                                                                                                     (i32.add
                                                                                                                                                                                                                                                       (get_local $l7)
                                                                                                                                                                                                                                                       (i32.const 15))
@@ -2935,7 +2953,7 @@
                                                                                                                                                                                                                                     (br_if $B52
                                                                                                                                                                                                                                       (i32.eqz
                                                                                                                                                                                                                                         (tee_local $l5
-                                                                                                                                                                                                                                          (call $f34))))
+                                                                                                                                                                                                                                          (call $f36))))
                                                                                                                                                                                                                                     (set_local $l8
                                                                                                                                                                                                                                       (i32.const 27))
                                                                                                                                                                                                                                     (br $L15))
@@ -3017,7 +3035,7 @@
                                                                                                                                                                                                                     (br_if $B37
                                                                                                                                                                                                                       (i32.eqz
                                                                                                                                                                                                                         (tee_local $l5
-                                                                                                                                                                                                                          (call $f34))))
+                                                                                                                                                                                                                          (call $f36))))
                                                                                                                                                                                                                     (set_local $l8
                                                                                                                                                                                                                       (i32.const 46))
                                                                                                                                                                                                                     (br $L15))
@@ -3089,7 +3107,7 @@
                                                                                                                                                                                                   (br_if $B42
                                                                                                                                                                                                     (i32.eqz
                                                                                                                                                                                                       (tee_local $l5
-                                                                                                                                                                                                        (call $f34))))
+                                                                                                                                                                                                        (call $f36))))
                                                                                                                                                                                                   (set_local $l8
                                                                                                                                                                                                     (i32.const 38))
                                                                                                                                                                                                   (br $L15))
@@ -3144,7 +3162,7 @@
                                                                                                                                                                                       (set_local $l8
                                                                                                                                                                                         (i32.const 23))
                                                                                                                                                                                       (br $L15))
-                                                                                                                                                                                    (call $f27
+                                                                                                                                                                                    (call $f29
                                                                                                                                                                                       (i32.add
                                                                                                                                                                                         (get_local $l7)
                                                                                                                                                                                         (i32.const 40)))
@@ -3165,23 +3183,23 @@
                                                                                                                                                                                     (i32.const 80)))
                                                                                                                                                                                 (return
                                                                                                                                                                                   (i32.const 0)))
-                                                                                                                                                                              (call $f159
+                                                                                                                                                                              (call $f161
                                                                                                                                                                                 (i32.const 544)
                                                                                                                                                                                 (i32.const 94))
                                                                                                                                                                               (unreachable))
-                                                                                                                                                                            (call $f32
+                                                                                                                                                                            (call $f34
                                                                                                                                                                               (i32.const 3696)
                                                                                                                                                                               (i32.const 42)
                                                                                                                                                                               (i32.const 3740))
                                                                                                                                                                             (unreachable))
-                                                                                                                                                                          (call $f32
+                                                                                                                                                                          (call $f34
                                                                                                                                                                             (i32.const 752)
                                                                                                                                                                             (i32.const 32)
                                                                                                                                                                             (i32.const 784))
                                                                                                                                                                           (unreachable))
-                                                                                                                                                                        (call $f35)
+                                                                                                                                                                        (call $f37)
                                                                                                                                                                         (unreachable))
-                                                                                                                                                                      (call $f74
+                                                                                                                                                                      (call $f76
                                                                                                                                                                         (i32.add
                                                                                                                                                                           (get_local $l1)
                                                                                                                                                                           (i32.const 28))
@@ -3218,48 +3236,48 @@
                                                                                                                                                                   (set_local $l8
                                                                                                                                                                     (i32.const 85))
                                                                                                                                                                   (br $L15))
-                                                                                                                                                                (call $f32
+                                                                                                                                                                (call $f34
                                                                                                                                                                   (i32.const 2336)
                                                                                                                                                                   (i32.const 54)
                                                                                                                                                                   (i32.const 2392))
                                                                                                                                                                 (unreachable))
-                                                                                                                                                              (call $f32
+                                                                                                                                                              (call $f34
                                                                                                                                                                 (i32.const 2208)
                                                                                                                                                                 (i32.const 23)
                                                                                                                                                                 (i32.const 2232))
                                                                                                                                                               (unreachable))
-                                                                                                                                                            (call $f32
+                                                                                                                                                            (call $f34
                                                                                                                                                               (i32.const 2256)
                                                                                                                                                               (i32.const 29)
                                                                                                                                                               (i32.const 2288))
                                                                                                                                                             (unreachable))
-                                                                                                                                                          (call $f35)
+                                                                                                                                                          (call $f37)
                                                                                                                                                           (unreachable))
-                                                                                                                                                        (call $f32
+                                                                                                                                                        (call $f34
                                                                                                                                                           (i32.const 3760)
                                                                                                                                                           (i32.const 47)
                                                                                                                                                           (i32.const 3808))
                                                                                                                                                         (unreachable))
-                                                                                                                                                      (call $f159
+                                                                                                                                                      (call $f161
                                                                                                                                                         (i32.const 544)
                                                                                                                                                         (i32.const 94))
                                                                                                                                                       (unreachable))
-                                                                                                                                                    (call $f136
+                                                                                                                                                    (call $f138
                                                                                                                                                       (i32.const 3300))
                                                                                                                                                     (unreachable))
-                                                                                                                                                  (call $f32
+                                                                                                                                                  (call $f34
                                                                                                                                                     (i32.const 2528)
                                                                                                                                                     (i32.const 28)
                                                                                                                                                     (i32.const 2556))
                                                                                                                                                   (unreachable))
-                                                                                                                                                (call $f32
+                                                                                                                                                (call $f34
                                                                                                                                                   (i32.const 752)
                                                                                                                                                   (i32.const 32)
                                                                                                                                                   (i32.const 784))
                                                                                                                                                 (unreachable))
-                                                                                                                                              (call $f35)
+                                                                                                                                              (call $f37)
                                                                                                                                               (unreachable))
-                                                                                                                                            (call $f74
+                                                                                                                                            (call $f76
                                                                                                                                               (i32.add
                                                                                                                                                 (get_local $l1)
                                                                                                                                                 (i32.const 28))
@@ -3267,14 +3285,14 @@
                                                                                                                                                 (get_local $l0)
                                                                                                                                                 (i32.const 0)))
                                                                                                                                             (unreachable))
-                                                                                                                                          (call $f32
+                                                                                                                                          (call $f34
                                                                                                                                             (i32.const 2528)
                                                                                                                                             (i32.const 28)
                                                                                                                                             (i32.const 2572))
                                                                                                                                           (unreachable))
-                                                                                                                                        (call $f35)
+                                                                                                                                        (call $f37)
                                                                                                                                         (unreachable))
-                                                                                                                                      (call $f35)
+                                                                                                                                      (call $f37)
                                                                                                                                       (unreachable))
                                                                                                                                     (i32.store
                                                                                                                                       (i32.add
@@ -3322,7 +3340,7 @@
                                                                                                                                         (get_local $l7)
                                                                                                                                         (i32.const 60))
                                                                                                                                       (i32.const 2))
-                                                                                                                                    (call $f77
+                                                                                                                                    (call $f79
                                                                                                                                       (i32.add
                                                                                                                                         (get_local $l7)
                                                                                                                                         (i32.const 40))
@@ -3517,7 +3535,7 @@
       (set_local $l8
         (i32.const 86))
       (br $L15)))
-  (func $f21 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f23 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (call_indirect $t2
       (i32.load offset=24
         (get_local $p1))
@@ -3528,7 +3546,7 @@
           (i32.add
             (get_local $p1)
             (i32.const 28))))))
-  (func $f22 (type $t5) (result i32)
+  (func $f24 (type $t5) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -3549,7 +3567,7 @@
                       (br_if $B8
                         (i32.eqz
                           (tee_local $l0
-                            (call $f23))))
+                            (call $f25))))
                       (br_if $B7
                         (i32.ne
                           (tee_local $l4
@@ -3577,7 +3595,7 @@
                   (get_local $l5)
                   (i32.const 0))
                 (set_local $l4
-                  (call $f25
+                  (call $f27
                     (get_local $l5)))
                 (br_if $B2
                   (i32.load
@@ -3611,7 +3629,7 @@
                     (i32.ne
                       (get_local $l3)
                       (i32.const 1)))
-                  (call $f27
+                  (call $f29
                     (get_local $l1)))
                 (i32.store
                   (get_local $l0)
@@ -3652,13 +3670,13 @@
               (i32.const 16)))
           (return
             (get_local $l4)))
-        (call $f26)
+        (call $f28)
         (unreachable))
       (unreachable)
       (unreachable))
-    (call $f24)
+    (call $f26)
     (unreachable))
-  (func $f23 (type $t5) (result i32)
+  (func $f25 (type $t5) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32)
     (set_local $l3
       (i32.const 0))
@@ -3674,7 +3692,7 @@
         (br_if $B0
           (i32.eqz
             (tee_local $l2
-              (call $f118
+              (call $f120
                 (i32.const 8)))))
         (i32.store
           (get_local $l2)
@@ -3705,7 +3723,7 @@
             (i32.load
               (get_local $l2))
             (get_local $l1)))
-        (call $f121
+        (call $f123
           (get_local $l2))
         (set_local $l2
           (get_local $l0)))
@@ -3722,7 +3740,7 @@
           (br_if $B0
             (i32.eqz
               (tee_local $l2
-                (call $f118
+                (call $f120
                   (i32.const 20)))))
           (i32.store
             (get_local $l2)
@@ -3741,7 +3759,7 @@
             (br_if $B0
               (i32.eqz
                 (tee_local $l3
-                  (call $f118
+                  (call $f120
                     (i32.const 8)))))
             (i32.store
               (get_local $l3)
@@ -3772,7 +3790,7 @@
                 (i32.load
                   (get_local $l3))
                 (get_local $l1)))
-            (call $f121
+            (call $f123
               (get_local $l3))
             (set_local $l3
               (get_local $l0)))
@@ -3791,7 +3809,7 @@
         (get_local $l3)))
     (unreachable)
     (unreachable))
-  (func $f24 (type $t6)
+  (func $f26 (type $t6)
     (local $l0 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -3852,13 +3870,13 @@
         (get_local $l0)
         (i32.const 36))
       (i32.const 2))
-    (call $f134
+    (call $f136
       (i32.add
         (get_local $l0)
         (i32.const 16))
       (i32.const 672))
     (unreachable))
-  (func $f25 (type $t9) (param $p0 i32) (result i32)
+  (func $f27 (type $t9) (param $p0 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i64) (local $l3 i64) (local $l4 i64)
     (i32.store offset=4
       (i32.const 0)
@@ -3875,7 +3893,7 @@
               (tee_local $l0
                 (i32.load
                   (get_local $p0)))))
-          (call $f29
+          (call $f31
             (i32.add
               (get_local $l1)
               (i32.const 8))
@@ -3897,7 +3915,7 @@
           (i32.store offset=16
             (get_local $l1)
             (get_local $l0))
-          (call $f31
+          (call $f33
             (get_local $l1)
             (i32.add
               (get_local $l1)
@@ -3941,7 +3959,7 @@
             (br_if $B5
               (i32.eqz
                 (tee_local $l0
-                  (call $f118
+                  (call $f120
                     (i32.const 1)))))
             (i32.store8
               (get_local $l0)
@@ -3949,7 +3967,7 @@
             (br_if $B5
               (i32.eqz
                 (tee_local $p0
-                  (call $f118
+                  (call $f120
                     (i32.const 48)))))
             (i64.store offset=8
               (get_local $p0)
@@ -3984,7 +4002,7 @@
               (get_local $p0)))
           (unreachable)
           (unreachable))
-        (call $f32
+        (call $f34
           (i32.const 752)
           (i32.const 32)
           (i32.const 784))
@@ -3992,7 +4010,7 @@
       (i32.store8 offset=736
         (i32.const 0)
         (i32.const 0))
-      (call $f32
+      (call $f34
         (i32.const 816)
         (i32.const 55)
         (i32.const 872))
@@ -4011,12 +4029,12 @@
     (i32.store offset=16
       (get_local $l1)
       (get_local $p0))
-    (call $f30
+    (call $f32
       (i32.add
         (get_local $l1)
         (i32.const 16)))
     (unreachable))
-  (func $f26 (type $t6)
+  (func $f28 (type $t6)
     (local $l0 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -4077,13 +4095,13 @@
         (get_local $l0)
         (i32.const 36))
       (i32.const 2))
-    (call $f134
+    (call $f136
       (i32.add
         (get_local $l0)
         (i32.const 16))
       (i32.const 672))
     (unreachable))
-  (func $f27 (type $t1) (param $p0 i32)
+  (func $f29 (type $t1) (param $p0 i32)
     (local $l0 i32)
     (block $B0
       (br_if $B0
@@ -4104,12 +4122,12 @@
             (i32.add
               (get_local $p0)
               (i32.const 20)))))
-      (call $f121
+      (call $f123
         (i32.load
           (i32.add
             (get_local $p0)
             (i32.const 16)))))
-    (call $f121
+    (call $f123
       (i32.load
         (i32.add
           (get_local $p0)
@@ -4126,16 +4144,16 @@
         (i32.ne
           (get_local $l0)
           (i32.const 1)))
-      (call $f121
+      (call $f123
         (get_local $p0))))
-  (func $f28 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
-    (call $f138
+  (func $f30 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+    (call $f140
       (get_local $p1)
       (i32.load
         (get_local $p0))
       (i32.load offset=4
         (get_local $p0))))
-  (func $f29 (type $t0) (param $p0 i32) (param $p1 i32) (param $p2 i32)
+  (func $f31 (type $t0) (param $p0 i32) (param $p1 i32) (param $p2 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32)
     (set_local $l5
       (i32.const 0))
@@ -4442,11 +4460,11 @@
         (get_local $p0)
         (i32.const 0))
       (return))
-    (call $f137
+    (call $f139
       (get_local $l5)
       (get_local $p2))
     (unreachable))
-  (func $f30 (type $t1) (param $p0 i32)
+  (func $f32 (type $t1) (param $p0 i32)
     (local $l0 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -4503,13 +4521,13 @@
         (get_local $l0)
         (i32.const 28))
       (i32.const 2))
-    (call $f134
+    (call $f136
       (i32.add
         (get_local $l0)
         (i32.const 8))
       (i32.const 672))
     (unreachable))
-  (func $f31 (type $t8) (param $p0 i32) (param $p1 i32)
+  (func $f33 (type $t8) (param $p0 i32) (param $p1 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -4550,7 +4568,7 @@
                   (set_local $l3
                     (select
                       (tee_local $l1
-                        (call $f164
+                        (call $f166
                           (i32.load
                             (get_local $p1))
                           (get_local $l0)
@@ -4571,7 +4589,7 @@
                     (br_if $B8
                       (i32.eqz
                         (tee_local $l3
-                          (call $f118
+                          (call $f120
                             (get_local $l2)))))
                     (set_local $l1
                       (get_local $l3))
@@ -4607,7 +4625,7 @@
               (i32.ne
                 (get_local $l0)
                 (get_local $l2)))
-            (call $f65
+            (call $f67
               (get_local $p1))
             (set_local $l2
               (i32.load
@@ -4620,11 +4638,11 @@
                   (get_local $p1)
                   (i32.const 8))))
             (br $B0))
-          (call $f159
+          (call $f161
             (i32.const 2032)
             (i32.const 17))
           (unreachable))
-        (call $f136
+        (call $f138
           (i32.const 2008))
         (unreachable))
       (unreachable)
@@ -4672,13 +4690,13 @@
             (br_if $B11
               (i32.eqz
                 (get_local $l2)))
-            (call $f121
+            (call $f123
               (get_local $l1))
             (br $B11))
           (br_if $B9
             (i32.eqz
               (tee_local $p1
-                (call $f164
+                (call $f166
                   (get_local $l1)
                   (get_local $l2)
                   (i32.const 1)
@@ -4697,17 +4715,17 @@
             (get_local $l4)
             (i32.const 16)))
         (return))
-      (call $f136
+      (call $f138
         (i32.const 1900))
       (unreachable))
     (unreachable)
     (unreachable))
-  (func $f32 (type $t0) (param $p0 i32) (param $p1 i32) (param $p2 i32)
+  (func $f34 (type $t0) (param $p0 i32) (param $p1 i32) (param $p2 i32)
     (local $l0 i32)
     (block $B0
       (br_if $B0
         (tee_local $l0
-          (call $f118
+          (call $f120
             (i32.const 8))))
       (unreachable)
       (unreachable))
@@ -4717,12 +4735,12 @@
     (i32.store
       (get_local $l0)
       (get_local $p0))
-    (call $f33
+    (call $f35
       (get_local $l0)
       (i32.const 920)
       (get_local $p2))
     (unreachable))
-  (func $f33 (type $t0) (param $p0 i32) (param $p1 i32) (param $p2 i32)
+  (func $f35 (type $t0) (param $p0 i32) (param $p1 i32) (param $p2 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32) (local $l7 i64)
     (i32.store offset=4
       (i32.const 0)
@@ -4746,8 +4764,8 @@
     (block $B0
       (br_if $B0
         (tee_local $p2
-          (call $f34)))
-      (call $f35)
+          (call $f36)))
+      (call $f37)
       (unreachable))
     (set_local $l4
       (i32.const 1))
@@ -4786,7 +4804,7 @@
         (i32.store offset=72
           (get_local $l6)
           (i32.const 5604))
-        (call $f36
+        (call $f38
           (i32.add
             (get_local $l6)
             (i32.const 56)))
@@ -4813,10 +4831,10 @@
             (i32.const 1)))
         (br_if $B3
           (tee_local $p2
-            (call $f34)))
-        (call $f35)
+            (call $f36)))
+        (call $f37)
         (unreachable))
-      (call $f32
+      (call $f34
         (i32.const 960)
         (i32.const 25)
         (i32.const 988))
@@ -4858,7 +4876,7 @@
               (i32.const 0)
               (i32.const 1))
             (br $B5))
-          (call $f32
+          (call $f34
             (i32.const 1088)
             (i32.const 40)
             (i32.const 1128))
@@ -4932,7 +4950,7 @@
     (i32.store offset=44
       (get_local $l6)
       (tee_local $p0
-        (call $f22)))
+        (call $f24)))
     (set_local $p2
       (i32.const 0))
     (block $B16
@@ -4957,7 +4975,7 @@
       (block $B17
         (br_if $B17
           (get_local $p2))
-        (call $f131
+        (call $f133
           (get_local $p1)
           (i32.const 0))
         (unreachable))
@@ -5017,7 +5035,7 @@
         (br_if $B18
           (i32.eqz
             (tee_local $p2
-              (call $f118
+              (call $f120
                 (i32.const 8)))))
         (i32.store
           (get_local $p2)
@@ -5048,7 +5066,7 @@
             (i32.load
               (get_local $p2))
             (get_local $p1)))
-        (call $f121
+        (call $f123
           (get_local $p2))
         (set_local $p2
           (get_local $p0)))
@@ -5075,7 +5093,7 @@
                               (br_if $B18
                                 (i32.eqz
                                   (tee_local $p2
-                                    (call $f118
+                                    (call $f120
                                       (i32.const 20)))))
                               (i32.store
                                 (i32.add
@@ -5160,7 +5178,7 @@
                                 (br_if $B18
                                   (i32.eqz
                                     (tee_local $p0
-                                      (call $f118
+                                      (call $f120
                                         (i32.const 8)))))
                                 (i32.store
                                   (get_local $p0)
@@ -5191,7 +5209,7 @@
                                     (i32.load
                                       (get_local $p0))
                                     (get_local $l3)))
-                                (call $f121
+                                (call $f123
                                   (get_local $p0))
                                 (set_local $p0
                                   (get_local $p1)))
@@ -5213,7 +5231,7 @@
                                 (get_local $p2)
                                 (i32.const 12)))
                             (br $B29))
-                          (call $f35)
+                          (call $f37)
                           (unreachable))
                         (i64.store offset=12 align=1
                           (get_local $p2)
@@ -5264,7 +5282,7 @@
                         (br_if $B24
                           (i32.eqz
                             (get_local $p2)))
-                        (call $f37
+                        (call $f39
                           (i32.add
                             (get_local $l6)
                             (i32.const 56))
@@ -5279,7 +5297,7 @@
                             (i32.load offset=44
                               (get_local $l6))))
                         (br $B22))
-                      (call $f37
+                      (call $f39
                         (i32.add
                           (get_local $l6)
                           (i32.const 56))
@@ -5299,7 +5317,7 @@
                         (br_if $B18
                           (i32.eqz
                             (tee_local $p2
-                              (call $f118
+                              (call $f120
                                 (i32.const 8)))))
                         (i32.store
                           (get_local $p2)
@@ -5330,7 +5348,7 @@
                             (i32.load
                               (get_local $p2))
                             (get_local $p1)))
-                        (call $f121
+                        (call $f123
                           (get_local $p2))
                         (set_local $p2
                           (get_local $p0)))
@@ -5344,12 +5362,12 @@
                         (get_local $p2))
                       (br_if $B26
                         (tee_local $p2
-                          (call $f118
+                          (call $f120
                             (i32.const 20))))
                       (br $B18))
-                    (call $f26)
+                    (call $f28)
                     (unreachable))
-                  (call $f35)
+                  (call $f37)
                   (unreachable))
                 (i32.store
                   (i32.add
@@ -5434,7 +5452,7 @@
                   (br_if $B18
                     (i32.eqz
                       (tee_local $p0
-                        (call $f118
+                        (call $f120
                           (i32.const 8)))))
                   (i32.store
                     (get_local $p0)
@@ -5465,7 +5483,7 @@
                       (i32.load
                         (get_local $p0))
                       (get_local $l3)))
-                  (call $f121
+                  (call $f123
                     (get_local $p0))
                   (set_local $p0
                     (get_local $p1)))
@@ -5507,7 +5525,7 @@
                       (i32.load offset=4
                         (i32.load offset=16
                           (get_local $p2)))))
-                  (call $f121
+                  (call $f123
                     (i32.load
                       (get_local $p0)))
                   (br $B40))
@@ -5554,7 +5572,7 @@
             (i32.ne
               (get_local $p1)
               (i32.const 1)))
-          (call $f27
+          (call $f29
             (i32.add
               (get_local $l6)
               (i32.const 44))))
@@ -5576,7 +5594,7 @@
               (i32.load offset=4
                 (i32.load offset=84
                   (get_local $l6)))))
-          (call $f121
+          (call $f123
             (i32.load offset=80
               (get_local $l6))))
         (i32.store offset=944
@@ -5607,17 +5625,17 @@
           (i32.store offset=72
             (get_local $l6)
             (i32.const 5604))
-          (call $f36
+          (call $f38
             (i32.add
               (get_local $l6)
               (i32.const 56))))
         (unreachable)
         (unreachable))
-      (call $f26)
+      (call $f28)
       (unreachable))
     (unreachable)
     (unreachable))
-  (func $f34 (type $t5) (result i32)
+  (func $f36 (type $t5) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32)
     (set_local $l3
       (i32.const 0))
@@ -5633,7 +5651,7 @@
         (br_if $B0
           (i32.eqz
             (tee_local $l2
-              (call $f118
+              (call $f120
                 (i32.const 8)))))
         (i32.store
           (get_local $l2)
@@ -5664,7 +5682,7 @@
             (i32.load
               (get_local $l2))
             (get_local $l1)))
-        (call $f121
+        (call $f123
           (get_local $l2))
         (set_local $l2
           (get_local $l0)))
@@ -5681,7 +5699,7 @@
           (br_if $B0
             (i32.eqz
               (tee_local $l2
-                (call $f118
+                (call $f120
                   (i32.const 12)))))
           (i32.store
             (get_local $l2)
@@ -5700,7 +5718,7 @@
             (br_if $B0
               (i32.eqz
                 (tee_local $l3
-                  (call $f118
+                  (call $f120
                     (i32.const 8)))))
             (i32.store
               (get_local $l3)
@@ -5731,7 +5749,7 @@
                 (i32.load
                   (get_local $l3))
                 (get_local $l1)))
-            (call $f121
+            (call $f123
               (get_local $l3))
             (set_local $l3
               (get_local $l0)))
@@ -5750,7 +5768,7 @@
         (get_local $l3)))
     (unreachable)
     (unreachable))
-  (func $f35 (type $t6)
+  (func $f37 (type $t6)
     (local $l0 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -5811,13 +5829,13 @@
         (get_local $l0)
         (i32.const 36))
       (i32.const 2))
-    (call $f134
+    (call $f136
       (i32.add
         (get_local $l0)
         (i32.const 16))
       (i32.const 672))
     (unreachable))
-  (func $f36 (type $t1) (param $p0 i32)
+  (func $f38 (type $t1) (param $p0 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i64)
     (i32.store offset=4
       (i32.const 0)
@@ -5911,7 +5929,7 @@
                 (block $B6
                   (br_if $B6
                     (i32.eqz
-                      (call $f144
+                      (call $f146
                         (i32.add
                           (get_local $l3)
                           (i32.const 32))
@@ -5927,7 +5945,7 @@
                   (br_if $B0
                     (i32.eqz
                       (tee_local $p0
-                        (call $f118
+                        (call $f120
                           (i32.const 15)))))
                   (i32.store offset=108
                     (get_local $l3)
@@ -5938,7 +5956,7 @@
                   (i32.store offset=112
                     (get_local $l3)
                     (i32.const 0))
-                  (call $f123
+                  (call $f125
                     (i32.add
                       (get_local $l3)
                       (i32.const 104))
@@ -6077,7 +6095,7 @@
                   (br_if $B0
                     (i32.eqz
                       (tee_local $l2
-                        (call $f118
+                        (call $f120
                           (i32.const 12)))))
                   (i64.store align=4
                     (get_local $l2)
@@ -6100,7 +6118,7 @@
                   (br_if $B0
                     (i32.eqz
                       (tee_local $p0
-                        (call $f118
+                        (call $f120
                           (i32.const 12)))))
                   (i32.store
                     (get_local $p0)
@@ -6165,10 +6183,10 @@
                       (i32.load offset=4
                         (i32.load offset=4
                           (get_local $l0)))))
-                  (call $f121
+                  (call $f123
                     (i32.load
                       (get_local $l0))))
-                (call $f121
+                (call $f123
                   (i32.load
                     (get_local $l1)))
                 (br_if $B3
@@ -6205,10 +6223,10 @@
               (i32.load offset=4
                 (i32.load offset=4
                   (get_local $p0)))))
-          (call $f121
+          (call $f123
             (i32.load
               (get_local $p0))))
-        (call $f121
+        (call $f123
           (get_local $p0)))
       (i32.store offset=4
         (i32.const 0)
@@ -6218,7 +6236,7 @@
       (return))
     (unreachable)
     (unreachable))
-  (func $f37 (type $t0) (param $p0 i32) (param $p1 i32) (param $p2 i32)
+  (func $f39 (type $t0) (param $p0 i32) (param $p1 i32) (param $p2 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i64)
     (i32.store offset=4
       (i32.const 0)
@@ -6344,10 +6362,10 @@
             (i32.load offset=4
               (i32.load offset=4
                 (get_local $l0)))))
-        (call $f121
+        (call $f123
           (i32.load
             (get_local $l0))))
-      (call $f121
+      (call $f123
         (get_local $l0)))
     (block $B3
       (block $B4
@@ -6420,10 +6438,10 @@
                   (i32.load offset=4
                     (i32.load offset=4
                       (get_local $p0)))))
-              (call $f121
+              (call $f123
                 (i32.load
                   (get_local $p0))))
-            (call $f121
+            (call $f123
               (get_local $p0))
             (br $B5))
           (br_if $B3
@@ -6454,7 +6472,7 @@
           (br_if $B4
             (i32.eqz
               (tee_local $p0
-                (call $f118
+                (call $f120
                   (i32.const 35)))))
           (i32.store offset=868
             (get_local $l4)
@@ -6465,7 +6483,7 @@
           (i32.store offset=872
             (get_local $l4)
             (i32.const 0))
-          (call $f123
+          (call $f125
             (i32.add
               (get_local $l4)
               (i32.const 864))
@@ -6478,7 +6496,7 @@
                   (get_local $l4)))
               (i32.const 35)))
           (drop
-            (call $f108
+            (call $f110
               (i32.add
                 (get_local $p0)
                 (i32.load offset=864
@@ -6580,7 +6598,7 @@
           (br_if $B4
             (i32.eqz
               (tee_local $p1
-                (call $f118
+                (call $f120
                   (i32.const 12)))))
           (i64.store align=4
             (get_local $p1)
@@ -6603,7 +6621,7 @@
           (br_if $B4
             (i32.eqz
               (tee_local $p0
-                (call $f118
+                (call $f120
                   (i32.const 12)))))
           (i32.store
             (get_local $p0)
@@ -6649,12 +6667,12 @@
               (i32.eqz
                 (i32.load offset=4
                   (get_local $p1))))
-            (call $f121
+            (call $f123
               (i32.load
                 (get_local $p1))))
-          (call $f121
+          (call $f123
             (get_local $p1))
-          (call $f121
+          (call $f123
             (get_local $p0)))
         (i32.store offset=4
           (i32.const 0)
@@ -6664,25 +6682,25 @@
         (return))
       (unreachable)
       (unreachable))
-    (call $f32
+    (call $f34
       (i32.const 752)
       (i32.const 32)
       (i32.const 784))
     (unreachable))
-  (func $f38 (type $t1) (param $p0 i32))
-  (func $f39 (type $t7) (param $p0 i32) (param $p1 i32) (param $p2 i32) (param $p3 i32)
-    (call $f60
+  (func $f40 (type $t1) (param $p0 i32))
+  (func $f41 (type $t7) (param $p0 i32) (param $p1 i32) (param $p2 i32) (param $p3 i32)
+    (call $f62
       (get_local $p0)))
-  (func $f40 (type $t8) (param $p0 i32) (param $p1 i32)
+  (func $f42 (type $t8) (param $p0 i32) (param $p1 i32)
     (i32.store8
       (get_local $p0)
       (i32.const 3)))
-  (func $f41 (type $t7) (param $p0 i32) (param $p1 i32) (param $p2 i32) (param $p3 i32)
-    (call $f59
+  (func $f43 (type $t7) (param $p0 i32) (param $p1 i32) (param $p2 i32) (param $p3 i32)
+    (call $f61
       (get_local $p0)
       (get_local $p2)
       (get_local $p3)))
-  (func $f42 (type $t0) (param $p0 i32) (param $p1 i32) (param $p2 i32)
+  (func $f44 (type $t0) (param $p0 i32) (param $p1 i32) (param $p2 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i64)
     (i32.store offset=4
       (i32.const 0)
@@ -6770,7 +6788,7 @@
               (block $B5
                 (br_if $B5
                   (i32.eqz
-                    (call $f144
+                    (call $f146
                       (i32.add
                         (get_local $l2)
                         (i32.const 24))
@@ -6786,7 +6804,7 @@
                 (br_if $B0
                   (i32.eqz
                     (tee_local $p2
-                      (call $f118
+                      (call $f120
                         (i32.const 15)))))
                 (i32.store offset=100
                   (get_local $l2)
@@ -6797,7 +6815,7 @@
                 (i32.store offset=104
                   (get_local $l2)
                   (i32.const 0))
-                (call $f123
+                (call $f125
                   (i32.add
                     (get_local $l2)
                     (i32.const 96))
@@ -6936,7 +6954,7 @@
                 (br_if $B0
                   (i32.eqz
                     (tee_local $p1
-                      (call $f118
+                      (call $f120
                         (i32.const 12)))))
                 (i64.store align=4
                   (get_local $p1)
@@ -6959,7 +6977,7 @@
                 (br_if $B0
                   (i32.eqz
                     (tee_local $p2
-                      (call $f118
+                      (call $f120
                         (i32.const 12)))))
                 (i32.store
                   (get_local $p2)
@@ -7036,10 +7054,10 @@
                 (i32.load offset=4
                   (i32.load offset=4
                     (get_local $p2)))))
-            (call $f121
+            (call $f123
               (i32.load
                 (get_local $p2))))
-          (call $f121
+          (call $f123
             (i32.load
               (get_local $p0)))
           (br $B1))
@@ -7055,16 +7073,16 @@
       (return))
     (unreachable)
     (unreachable))
-  (func $f43 (type $t1) (param $p0 i32)
+  (func $f45 (type $t1) (param $p0 i32)
     (block $B0
       (br_if $B0
         (i32.eqz
           (i32.load offset=4
             (get_local $p0))))
-      (call $f121
+      (call $f123
         (i32.load
           (get_local $p0)))))
-  (func $f44 (type $t8) (param $p0 i32) (param $p1 i32)
+  (func $f46 (type $t8) (param $p0 i32) (param $p1 i32)
     (i32.store offset=4
       (get_local $p0)
       (i32.load offset=8
@@ -7073,20 +7091,20 @@
       (get_local $p0)
       (i32.load
         (get_local $p1))))
-  (func $f45 (type $t8) (param $p0 i32) (param $p1 i32)
+  (func $f47 (type $t8) (param $p0 i32) (param $p1 i32)
     (i32.store
       (get_local $p0)
       (i32.const 0)))
-  (func $f46 (type $t3) (param $p0 i32) (result i64)
+  (func $f48 (type $t3) (param $p0 i32) (result i64)
     (i64.const -2926484103183485980))
-  (func $f47 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
-    (call $f138
+  (func $f49 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+    (call $f140
       (get_local $p1)
       (i32.load
         (get_local $p0))
       (i32.load offset=8
         (get_local $p0))))
-  (func $f48 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f50 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -7120,7 +7138,7 @@
       (get_local $l2)
       (get_local $p0))
     (set_local $p0
-      (call $f147
+      (call $f149
         (get_local $l2)
         (i32.add
           (get_local $l2)
@@ -7212,9 +7230,9 @@
         (get_local $p1)
         (i32.const 255))
       (i32.const 0)))
-  (func $f49 (type $t1) (param $p0 i32))
-  (func $f50 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
-    (call $f160
+  (func $f51 (type $t1) (param $p0 i32))
+  (func $f52 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+    (call $f162
       (i32.load
         (tee_local $p0
           (i32.load
@@ -7222,7 +7240,7 @@
       (i32.load offset=8
         (get_local $p0))
       (get_local $p1)))
-  (func $f51 (type $t1) (param $p0 i32)
+  (func $f53 (type $t1) (param $p0 i32)
     (local $l0 i32)
     (block $B0
       (block $B1
@@ -7250,13 +7268,13 @@
             (i32.load offset=4
               (i32.load offset=4
                 (get_local $p0)))))
-        (call $f121
+        (call $f123
           (i32.load
             (get_local $p0))))
-      (call $f121
+      (call $f123
         (i32.load
           (get_local $l0)))))
-  (func $f52 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
+  (func $f54 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
     (local $l0 i32) (local $l1 i64)
     (i32.store offset=4
       (i32.const 0)
@@ -7265,7 +7283,7 @@
           (i32.load offset=4
             (i32.const 0))
           (i32.const 16))))
-    (call $f59
+    (call $f61
       (i32.add
         (get_local $l0)
         (i32.const 8))
@@ -7307,10 +7325,10 @@
               (i32.load offset=4
                 (i32.load offset=4
                   (get_local $p1)))))
-          (call $f121
+          (call $f123
             (i32.load
               (get_local $p1))))
-        (call $f121
+        (call $f123
           (get_local $p1)))
       (i64.store align=4
         (i32.add
@@ -7325,7 +7343,7 @@
         (get_local $l0)
         (i32.const 16)))
     (get_local $p1))
-  (func $f53 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f55 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32) (local $l7 i64)
     (i32.store offset=4
       (i32.const 0)
@@ -7445,7 +7463,7 @@
             (get_local $p1)
             (i32.const 63))
           (i32.const 128))))
-    (call $f59
+    (call $f61
       (i32.add
         (get_local $l6)
         (i32.const 8))
@@ -7489,10 +7507,10 @@
               (i32.load offset=4
                 (i32.load offset=4
                   (get_local $p1)))))
-          (call $f121
+          (call $f123
             (i32.load
               (get_local $p1))))
-        (call $f121
+        (call $f123
           (get_local $p1)))
       (i64.store align=4
         (i32.add
@@ -7507,7 +7525,7 @@
         (get_local $l6)
         (i32.const 16)))
     (get_local $p1))
-  (func $f54 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f56 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -7544,7 +7562,7 @@
       (i64.load align=4
         (get_local $p1)))
     (set_local $p1
-      (call $f144
+      (call $f146
         (i32.add
           (get_local $l0)
           (i32.const 4))
@@ -7558,8 +7576,8 @@
         (get_local $l0)
         (i32.const 32)))
     (get_local $p1))
-  (func $f55 (type $t1) (param $p0 i32))
-  (func $f56 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
+  (func $f57 (type $t1) (param $p0 i32))
+  (func $f58 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
     (local $l0 i32) (local $l1 i64)
     (i32.store offset=4
       (i32.const 0)
@@ -7571,7 +7589,7 @@
     (set_local $p0
       (i32.load
         (get_local $p0)))
-    (call $f59
+    (call $f61
       (i32.add
         (get_local $l0)
         (i32.const 8))
@@ -7613,10 +7631,10 @@
               (i32.load offset=4
                 (i32.load offset=4
                   (get_local $p1)))))
-          (call $f121
+          (call $f123
             (i32.load
               (get_local $p1))))
-        (call $f121
+        (call $f123
           (get_local $p1)))
       (i64.store align=4
         (i32.add
@@ -7631,7 +7649,7 @@
         (get_local $l0)
         (i32.const 16)))
     (get_local $p1))
-  (func $f57 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f59 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32) (local $l7 i64)
     (i32.store offset=4
       (i32.const 0)
@@ -7754,7 +7772,7 @@
             (get_local $p1)
             (i32.const 63))
           (i32.const 128))))
-    (call $f59
+    (call $f61
       (i32.add
         (get_local $l6)
         (i32.const 8))
@@ -7798,10 +7816,10 @@
               (i32.load offset=4
                 (i32.load offset=4
                   (get_local $p1)))))
-          (call $f121
+          (call $f123
             (i32.load
               (get_local $p1))))
-        (call $f121
+        (call $f123
           (get_local $p1)))
       (i64.store align=4
         (i32.add
@@ -7816,7 +7834,7 @@
         (get_local $l6)
         (i32.const 16)))
     (get_local $p1))
-  (func $f58 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f60 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -7878,7 +7896,7 @@
       (i64.load offset=8
         (get_local $l2)))
     (set_local $p1
-      (call $f144
+      (call $f146
         (i32.add
           (get_local $l2)
           (i32.const 36))
@@ -7892,7 +7910,7 @@
         (get_local $l2)
         (i32.const 64)))
     (get_local $p1))
-  (func $f59 (type $t0) (param $p0 i32) (param $p1 i32) (param $p2 i32)
+  (func $f61 (type $t0) (param $p0 i32) (param $p1 i32) (param $p2 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i64)
     (i32.store offset=4
       (i32.const 0)
@@ -7919,7 +7937,7 @@
                     (get_local $l4)
                     (i32.const 8)))
                 (loop $L6
-                  (call $f60
+                  (call $f62
                     (get_local $l4))
                   (block $B7
                     (br_if $B7
@@ -7970,10 +7988,10 @@
                           (i32.load offset=4
                             (i32.load offset=4
                               (get_local $l1)))))
-                      (call $f121
+                      (call $f123
                         (i32.load
                           (get_local $l1))))
-                    (call $f121
+                    (call $f123
                       (get_local $l1))
                     (br $L6))
                   (br_if $B3
@@ -8006,7 +8024,7 @@
           (br_if $B1
             (i32.eqz
               (tee_local $l1
-                (call $f118
+                (call $f120
                   (i32.const 28)))))
           (i32.store offset=52
             (get_local $l4)
@@ -8017,7 +8035,7 @@
           (i32.store offset=56
             (get_local $l4)
             (i32.const 0))
-          (call $f123
+          (call $f125
             (i32.add
               (get_local $l4)
               (i32.const 48))
@@ -8168,7 +8186,7 @@
           (br_if $B1
             (i32.eqz
               (tee_local $l3
-                (call $f118
+                (call $f120
                   (i32.const 12)))))
           (i64.store align=4
             (get_local $l3)
@@ -8191,7 +8209,7 @@
           (br_if $B1
             (i32.eqz
               (tee_local $l1
-                (call $f118
+                (call $f120
                   (i32.const 12)))))
           (i32.store
             (get_local $l1)
@@ -8238,7 +8256,7 @@
             (get_local $p0)
             (i32.const 2))
           (br $B0))
-        (call $f137
+        (call $f139
           (get_local $l1)
           (get_local $p2))
         (unreachable))
@@ -8249,7 +8267,7 @@
       (i32.add
         (get_local $l4)
         (i32.const 80))))
-  (func $f60 (type $t1) (param $p0 i32)
+  (func $f62 (type $t1) (param $p0 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i64)
     (i32.store offset=4
       (i32.const 0)
@@ -8262,7 +8280,7 @@
       (br_if $B0
         (i32.eqz
           (tee_local $l1
-            (call $f118
+            (call $f120
               (i32.const 35)))))
       (i32.store offset=36
         (get_local $l4)
@@ -8273,7 +8291,7 @@
       (i32.store offset=40
         (get_local $l4)
         (i32.const 0))
-      (call $f123
+      (call $f125
         (i32.add
           (get_local $l4)
           (i32.const 32))
@@ -8286,7 +8304,7 @@
               (get_local $l4)))
           (i32.const 35)))
       (drop
-        (call $f108
+        (call $f110
           (i32.add
             (get_local $l1)
             (i32.load offset=32
@@ -8386,7 +8404,7 @@
       (br_if $B0
         (i32.eqz
           (tee_local $l0
-            (call $f118
+            (call $f120
               (i32.const 12)))))
       (i64.store align=4
         (get_local $l0)
@@ -8409,7 +8427,7 @@
       (br_if $B0
         (i32.eqz
           (tee_local $l1
-            (call $f118
+            (call $f120
               (i32.const 12)))))
       (i32.store
         (get_local $l1)
@@ -8461,7 +8479,7 @@
       (return))
     (unreachable)
     (unreachable))
-  (func $f61 (type $t1) (param $p0 i32)
+  (func $f63 (type $t1) (param $p0 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32)
     (block $B0
       (block $B1
@@ -8477,7 +8495,7 @@
         (br_if $B0
           (i32.eqz
             (tee_local $l3
-              (call $f118
+              (call $f120
                 (i32.const 8)))))
         (i32.store offset=4
           (get_local $l3)
@@ -8508,7 +8526,7 @@
             (i32.load
               (get_local $l3))
             (get_local $l2)))
-        (call $f121
+        (call $f123
           (get_local $l3))
         (set_local $l3
           (get_local $l1)))
@@ -8535,12 +8553,12 @@
             (i32.load offset=4
               (i32.load offset=16
                 (get_local $p0)))))
-        (call $f121
+        (call $f123
           (i32.load
             (i32.add
               (get_local $p0)
               (i32.const 12)))))
-      (call $f121
+      (call $f123
         (get_local $p0))
       (block $B4
         (br_if $B4
@@ -8553,7 +8571,7 @@
         (br_if $B0
           (i32.eqz
             (tee_local $p0
-              (call $f118
+              (call $f120
                 (i32.const 8)))))
         (i32.store offset=4
           (get_local $p0)
@@ -8584,7 +8602,7 @@
             (i32.load
               (get_local $p0))
             (get_local $l0)))
-        (call $f121
+        (call $f123
           (get_local $p0))
         (set_local $p0
           (get_local $l3)))
@@ -8594,7 +8612,7 @@
       (return))
     (unreachable)
     (unreachable))
-  (func $f62 (type $t1) (param $p0 i32)
+  (func $f64 (type $t1) (param $p0 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32)
     (block $B0
       (block $B1
@@ -8610,7 +8628,7 @@
         (br_if $B0
           (i32.eqz
             (tee_local $l3
-              (call $f118
+              (call $f120
                 (i32.const 8)))))
         (i32.store offset=4
           (get_local $l3)
@@ -8641,14 +8659,14 @@
             (i32.load
               (get_local $l3))
             (get_local $l2)))
-        (call $f121
+        (call $f123
           (get_local $l3))
         (set_local $l3
           (get_local $l1)))
       (i32.store
         (get_local $l3)
         (i32.const 1))
-      (call $f121
+      (call $f123
         (get_local $p0))
       (block $B3
         (br_if $B3
@@ -8661,7 +8679,7 @@
         (br_if $B0
           (i32.eqz
             (tee_local $l3
-              (call $f118
+              (call $f120
                 (i32.const 8)))))
         (i32.store offset=4
           (get_local $l3)
@@ -8692,7 +8710,7 @@
             (i32.load
               (get_local $l3))
             (get_local $l0)))
-        (call $f121
+        (call $f123
           (get_local $l3))
         (set_local $l3
           (get_local $p0)))
@@ -8702,10 +8720,10 @@
       (return))
     (unreachable)
     (unreachable))
-  (func $f63 (type $t1) (param $p0 i32))
-  (func $f64 (type $t3) (param $p0 i32) (result i64)
+  (func $f65 (type $t1) (param $p0 i32))
+  (func $f66 (type $t3) (param $p0 i32) (result i64)
     (i64.const 1229646359891580772))
-  (func $f65 (type $t1) (param $p0 i32)
+  (func $f67 (type $t1) (param $p0 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -8732,7 +8750,7 @@
                 (i32.const -1)))
             (br_if $B2
               (tee_local $l0
-                (call $f164
+                (call $f166
                   (i32.load
                     (get_local $p0))
                   (get_local $l0)
@@ -8747,7 +8765,7 @@
           (br_if $B0
             (i32.eqz
               (tee_local $l0
-                (call $f118
+                (call $f120
                   (i32.const 4))))))
         (i32.store
           (get_local $p0)
@@ -8763,12 +8781,12 @@
             (get_local $l2)
             (i32.const 16)))
         (return))
-      (call $f136
+      (call $f138
         (i32.const 2008))
       (unreachable))
     (unreachable)
     (unreachable))
-  (func $f66 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f68 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -8802,7 +8820,7 @@
       (get_local $l2)
       (get_local $p0))
     (set_local $p1
-      (call $f147
+      (call $f149
         (get_local $l2)
         (i32.add
           (get_local $l2)
@@ -8814,7 +8832,7 @@
         (get_local $p0)
         (i32.const 4)))
     (set_local $p0
-      (call $f147
+      (call $f149
         (get_local $p1)
         (i32.add
           (get_local $l2)
@@ -8906,8 +8924,8 @@
         (get_local $p1)
         (i32.const 255))
       (i32.const 0)))
-  (func $f67 (type $t1) (param $p0 i32))
-  (func $f68 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f69 (type $t1) (param $p0 i32))
+  (func $f70 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32) (local $l7 i32) (local $l8 i32) (local $l9 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -8954,7 +8972,7 @@
       (get_local $l9)
       (i32.const 5604))
     (set_local $l8
-      (call $f144
+      (call $f146
         (get_local $l7)
         (get_local $l8)
         (i32.add
@@ -9080,7 +9098,7 @@
                 (get_local $l9)
                 (i32.const 40)))
             (set_local $l8
-              (call $f144
+              (call $f146
                 (get_local $l3)
                 (get_local $l8)
                 (i32.add
@@ -9158,7 +9176,7 @@
             (get_local $l2)
             (i32.const 2))
           (set_local $l8
-            (call $f144
+            (call $f146
               (i32.add
                 (get_local $l9)
                 (i32.const 24))
@@ -9224,8 +9242,8 @@
         (get_local $l9)
         (i32.const 80)))
     (get_local $p0))
-  (func $f69 (type $t1) (param $p0 i32))
-  (func $f70 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f71 (type $t1) (param $p0 i32))
+  (func $f72 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -9289,7 +9307,7 @@
       (set_local $l0
         (i32.const 37)))
     (set_local $p0
-      (call $f135
+      (call $f137
         (get_local $p1)
         (i32.const 1)
         (i32.const 5516)
@@ -9308,8 +9326,8 @@
         (get_local $l1)
         (i32.const 48)))
     (get_local $p0))
-  (func $f71 (type $t1) (param $p0 i32))
-  (func $f72 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f73 (type $t1) (param $p0 i32))
+  (func $f74 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -9444,7 +9462,7 @@
               (i32.const 1))
             (i32.const 5316)))))
     (set_local $p0
-      (call $f135
+      (call $f137
         (get_local $p1)
         (i32.const 1)
         (i32.const 5516)
@@ -9463,7 +9481,7 @@
         (get_local $l3)
         (i32.const 48)))
     (get_local $p0))
-  (func $f73 (type $t1) (param $p0 i32)
+  (func $f75 (type $t1) (param $p0 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32)
     (block $B0
       (block $B1
@@ -9479,7 +9497,7 @@
         (br_if $B0
           (i32.eqz
             (tee_local $l3
-              (call $f118
+              (call $f120
                 (i32.const 8)))))
         (i32.store offset=4
           (get_local $l3)
@@ -9510,7 +9528,7 @@
             (i32.load
               (get_local $l3))
             (get_local $l2)))
-        (call $f121
+        (call $f123
           (get_local $l3))
         (set_local $l3
           (get_local $l1)))
@@ -9536,11 +9554,11 @@
           (i32.ne
             (get_local $l3)
             (i32.const 1)))
-        (call $f27
+        (call $f29
           (i32.add
             (get_local $p0)
             (i32.const 16))))
-      (call $f121
+      (call $f123
         (get_local $p0))
       (block $B4
         (br_if $B4
@@ -9553,7 +9571,7 @@
         (br_if $B0
           (i32.eqz
             (tee_local $p0
-              (call $f118
+              (call $f120
                 (i32.const 8)))))
         (i32.store offset=4
           (get_local $p0)
@@ -9584,7 +9602,7 @@
             (i32.load
               (get_local $p0))
             (get_local $l0)))
-        (call $f121
+        (call $f123
           (get_local $p0))
         (set_local $p0
           (get_local $l3)))
@@ -9594,7 +9612,7 @@
       (return))
     (unreachable)
     (unreachable))
-  (func $f74 (type $t8) (param $p0 i32) (param $p1 i32)
+  (func $f76 (type $t8) (param $p0 i32) (param $p1 i32)
     (local $l0 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -9661,18 +9679,18 @@
         (get_local $l0)
         (i32.const 44))
       (i32.const 2))
-    (call $f134
+    (call $f136
       (i32.add
         (get_local $l0)
         (i32.const 24))
       (i32.const 672))
     (unreachable))
-  (func $f75 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
-    (call $f160
+  (func $f77 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+    (call $f162
       (i32.const 2496)
       (i32.const 25)
       (get_local $p1)))
-  (func $f76 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f78 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -9754,7 +9772,7 @@
                                               (br_if $B2
                                                 (i32.eqz
                                                   (tee_local $p0
-                                                    (call $f118
+                                                    (call $f120
                                                       (i32.const 20)))))
                                               (i32.store offset=24
                                                 (get_local $l2)
@@ -9790,7 +9808,7 @@
                                                 (get_local $l2)
                                                 (i32.const 5604))
                                               (br_if $B1
-                                                (call $f144
+                                                (call $f146
                                                   (i32.add
                                                     (get_local $l2)
                                                     (i32.const 8))
@@ -9889,7 +9907,7 @@
                                                   (get_local $l2)
                                                   (i32.const 24)))
                                               (set_local $p0
-                                                (call $f144
+                                                (call $f146
                                                   (get_local $p1)
                                                   (get_local $p0)
                                                   (i32.add
@@ -9899,7 +9917,7 @@
                                                 (i32.eqz
                                                   (i32.load offset=12
                                                     (get_local $l2))))
-                                              (call $f121
+                                              (call $f123
                                                 (i32.load offset=8
                                                   (get_local $l2)))
                                               (br $B3))
@@ -10029,7 +10047,7 @@
                 (get_local $l2)
                 (i32.const 8)))
             (set_local $p0
-              (call $f144
+              (call $f146
                 (get_local $p1)
                 (get_local $p0)
                 (i32.add
@@ -10044,14 +10062,14 @@
             (get_local $p0)))
         (unreachable)
         (unreachable))
-      (call $f124)
+      (call $f126)
       (unreachable))
-    (call $f32
+    (call $f34
       (i32.const 1088)
       (i32.const 40)
       (i32.const 2660))
     (unreachable))
-  (func $f77 (type $t8) (param $p0 i32) (param $p1 i32)
+  (func $f79 (type $t8) (param $p0 i32) (param $p1 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -10119,7 +10137,7 @@
       (i64.load offset=24
         (get_local $l2)))
     (drop
-      (call $f144
+      (call $f146
         (i32.add
           (get_local $l2)
           (i32.const 52))
@@ -10135,13 +10153,13 @@
       (get_local $l2)
       (i64.load offset=8
         (get_local $l2)))
-    (call $f78
+    (call $f80
       (i32.add
         (get_local $l2)
         (i32.const 56))
       (get_local $p1))
     (unreachable))
-  (func $f78 (type $t8) (param $p0 i32) (param $p1 i32)
+  (func $f80 (type $t8) (param $p0 i32) (param $p1 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i64)
     (i32.store offset=4
       (i32.const 0)
@@ -10166,7 +10184,7 @@
     (block $B0
       (br_if $B0
         (tee_local $p0
-          (call $f118
+          (call $f120
             (i32.const 12))))
       (unreachable)
       (unreachable))
@@ -10192,26 +10210,26 @@
     (i64.store offset=16
       (get_local $l1)
       (get_local $l2))
-    (call $f33
+    (call $f35
       (get_local $p0)
       (i32.const 2588)
       (get_local $p1))
     (unreachable))
-  (func $f79 (type $t1) (param $p0 i32)
+  (func $f81 (type $t1) (param $p0 i32)
     (block $B0
       (br_if $B0
         (i32.eqz
           (i32.load offset=4
             (get_local $p0))))
-      (call $f121
+      (call $f123
         (i32.load
           (get_local $p0)))))
-  (func $f80 (type $t3) (param $p0 i32) (result i64)
+  (func $f82 (type $t3) (param $p0 i32) (result i64)
     (i64.const -2132754004398274982))
-  (func $f81 (type $t1) (param $p0 i32))
-  (func $f82 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
+  (func $f83 (type $t1) (param $p0 i32))
+  (func $f84 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
     (local $l0 i32)
-    (call $f85
+    (call $f87
       (tee_local $p0
         (i32.load
           (get_local $p0)))
@@ -10224,7 +10242,7 @@
             (get_local $p0)))
         (get_local $p2)))
     (drop
-      (call $f108
+      (call $f110
         (i32.add
           (get_local $l0)
           (i32.load
@@ -10232,7 +10250,7 @@
         (get_local $p1)
         (get_local $p2)))
     (i32.const 0))
-  (func $f83 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f85 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -10359,7 +10377,7 @@
                 (get_local $p1)
                 (i32.const 63))
               (i32.const 128)))
-          (call $f85
+          (call $f87
             (get_local $p0)
             (get_local $l5))
           (i32.store offset=8
@@ -10370,7 +10388,7 @@
                   (get_local $p0)))
               (get_local $l5)))
           (drop
-            (call $f108
+            (call $f110
               (i32.add
                 (get_local $p1)
                 (i32.load
@@ -10380,7 +10398,7 @@
                 (i32.const 12))
               (get_local $l5)))
           (br $B0))
-        (call $f65
+        (call $f67
           (get_local $p0))
         (set_local $l5
           (i32.load
@@ -10406,7 +10424,7 @@
         (get_local $l6)
         (i32.const 16)))
     (i32.const 0))
-  (func $f84 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f86 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -10468,7 +10486,7 @@
       (i64.load offset=8
         (get_local $l2)))
     (set_local $p1
-      (call $f144
+      (call $f146
         (i32.add
           (get_local $l2)
           (i32.const 36))
@@ -10482,7 +10500,7 @@
         (get_local $l2)
         (i32.const 64)))
     (get_local $p1))
-  (func $f85 (type $t8) (param $p0 i32) (param $p1 i32)
+  (func $f87 (type $t8) (param $p0 i32) (param $p1 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -10533,7 +10551,7 @@
                 (set_local $l1
                   (select
                     (tee_local $l0
-                      (call $f164
+                      (call $f166
                         (i32.load
                           (get_local $p0))
                         (get_local $l1)
@@ -10554,7 +10572,7 @@
                   (br_if $B7
                     (i32.eqz
                       (tee_local $l1
-                        (call $f118
+                        (call $f120
                           (get_local $p1)))))
                   (set_local $l0
                     (get_local $l1))
@@ -10592,23 +10610,23 @@
               (get_local $l2)
               (i32.const 16)))
           (return))
-        (call $f159
+        (call $f161
           (i32.const 2032)
           (i32.const 17))
         (unreachable))
-      (call $f136
+      (call $f138
         (i32.const 2008))
       (unreachable))
     (unreachable)
     (unreachable))
-  (func $f86 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
-    (call $f138
+  (func $f88 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+    (call $f140
       (get_local $p1)
       (i32.load
         (get_local $p0))
       (i32.load offset=8
         (get_local $p0))))
-  (func $f87 (type $t1) (param $p0 i32)
+  (func $f89 (type $t1) (param $p0 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -10637,7 +10655,7 @@
               (br_if $B1
                 (i32.eqz
                   (tee_local $l1
-                    (call $f164
+                    (call $f166
                       (i32.load
                         (get_local $p0))
                       (i32.shl
@@ -10655,7 +10673,7 @@
             (br_if $B0
               (i32.eqz
                 (tee_local $l1
-                  (call $f118
+                  (call $f120
                     (i32.const 32)))))
             (set_local $l0
               (i32.const 4)))
@@ -10673,14 +10691,14 @@
               (get_local $l2)
               (i32.const 16)))
           (return))
-        (call $f136
+        (call $f138
           (i32.const 2008))
         (unreachable))
       (unreachable)
       (unreachable))
     (unreachable)
     (unreachable))
-  (func $f88 (type $t5) (result i32)
+  (func $f90 (type $t5) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32)
     (block $B0
       (block $B1
@@ -10723,7 +10741,7 @@
                   (br_if $B4
                     (i32.eqz
                       (tee_local $l0
-                        (call $f118
+                        (call $f120
                           (i32.const 4)))))
                   (i32.store
                     (get_local $l0)
@@ -10748,7 +10766,7 @@
                         (br_if $B0
                           (i32.eqz
                             (tee_local $l2
-                              (call $f118
+                              (call $f120
                                 (i32.const 12)))))
                         (i32.store offset=3220
                           (i32.const 0)
@@ -10770,14 +10788,14 @@
                     (i32.store8 offset=3216
                       (i32.const 0)
                       (i32.const 0))
-                    (call $f121
+                    (call $f123
                       (get_local $l0))
                     (set_local $l2
                       (call_indirect $t5
                         (i32.load offset=3228
                           (i32.const 0))))
                     (br $B1))
-                  (call $f87
+                  (call $f89
                     (get_local $l2))
                   (set_local $l1
                     (i32.load
@@ -10785,7 +10803,7 @@
                         (get_local $l2)
                         (i32.const 8))))
                   (br $B2))
-                (call $f32
+                (call $f34
                   (i32.const 752)
                   (i32.const 32)
                   (i32.const 784))
@@ -10793,13 +10811,13 @@
               (i32.store8 offset=3232
                 (i32.const 0)
                 (i32.const 0))
-              (call $f159
+              (call $f161
                 (i32.const 3264)
                 (i32.const 36))
               (unreachable))
             (unreachable)
             (unreachable))
-          (call $f32
+          (call $f34
             (i32.const 752)
             (i32.const 32)
             (i32.const 784))
@@ -10843,7 +10861,7 @@
         (br_if $B0
           (i32.eqz
             (tee_local $l0
-              (call $f118
+              (call $f120
                 (i32.const 4)))))
         (i32.store
           (get_local $l0)
@@ -10858,8 +10876,8 @@
         (get_local $l2)))
     (unreachable)
     (unreachable))
-  (func $f89 (type $t1) (param $p0 i32))
-  (func $f90 (type $t1) (param $p0 i32)
+  (func $f91 (type $t1) (param $p0 i32))
+  (func $f92 (type $t1) (param $p0 i32)
     (local $l0 i32) (local $l1 i32)
     (block $B0
       (br_if $B0
@@ -10892,19 +10910,19 @@
           (i32.ne
             (get_local $l0)
             (i32.const 1)))
-        (call $f91
+        (call $f93
           (get_local $l1)))
-      (call $f121
+      (call $f123
         (get_local $l1))
-      (call $f121
+      (call $f123
         (get_local $p0))
       (return))
-    (call $f32
+    (call $f34
       (i32.const 752)
       (i32.const 32)
       (i32.const 784))
     (unreachable))
-  (func $f91 (type $t1) (param $p0 i32)
+  (func $f93 (type $t1) (param $p0 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -10932,7 +10950,7 @@
           (i32.add
             (get_local $p0)
             (i32.const 29))))
-      (call $f92
+      (call $f94
         (i32.add
           (get_local $l2)
           (i32.const 8))
@@ -10959,10 +10977,10 @@
             (i32.load offset=4
               (i32.load offset=4
                 (get_local $l0)))))
-        (call $f121
+        (call $f123
           (i32.load
             (get_local $l0))))
-      (call $f121
+      (call $f123
         (get_local $l0)))
     (block $B3
       (br_if $B3
@@ -10971,7 +10989,7 @@
             (i32.add
               (get_local $p0)
               (i32.const 20)))))
-      (call $f121
+      (call $f123
         (i32.load
           (get_local $l1))))
     (i32.store offset=4
@@ -10986,14 +11004,14 @@
         (i32.ne
           (get_local $l1)
           (i32.const 1)))
-      (call $f121
+      (call $f123
         (get_local $p0)))
     (i32.store offset=4
       (i32.const 0)
       (i32.add
         (get_local $l2)
         (i32.const 16))))
-  (func $f92 (type $t8) (param $p0 i32) (param $p1 i32)
+  (func $f94 (type $t8) (param $p0 i32) (param $p1 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32) (local $l7 i32) (local $l8 i32) (local $l9 i32) (local $l10 i64)
     (i32.store offset=4
       (i32.const 0)
@@ -11051,7 +11069,7 @@
                               (i32.eq
                                 (get_local $l4)
                                 (i32.const 1)))
-                            (call $f60
+                            (call $f62
                               (i32.add
                                 (get_local $l9)
                                 (i32.const 48)))
@@ -11092,10 +11110,10 @@
                                     (i32.load offset=4
                                       (i32.load offset=4
                                         (get_local $l2)))))
-                                (call $f121
+                                (call $f123
                                   (i32.load
                                     (get_local $l2))))
-                              (call $f121
+                              (call $f123
                                 (get_local $l2))
                               (br $B10))
                             (set_local $l8
@@ -11146,7 +11164,7 @@
                   (br_if $B2
                     (i32.eqz
                       (tee_local $l8
-                        (call $f118
+                        (call $f120
                           (i32.const 33)))))
                   (i32.store offset=36
                     (get_local $l9)
@@ -11157,7 +11175,7 @@
                   (i32.store offset=40
                     (get_local $l9)
                     (i32.const 0))
-                  (call $f123
+                  (call $f125
                     (i32.add
                       (get_local $l9)
                       (i32.const 32))
@@ -11170,7 +11188,7 @@
                           (get_local $l9)))
                       (i32.const 33)))
                   (drop
-                    (call $f108
+                    (call $f110
                       (i32.add
                         (get_local $l8)
                         (i32.load offset=32
@@ -11270,7 +11288,7 @@
                   (br_if $B2
                     (i32.eqz
                       (tee_local $l3
-                        (call $f118
+                        (call $f120
                           (i32.const 12)))))
                   (i64.store align=4
                     (get_local $l3)
@@ -11293,7 +11311,7 @@
                   (br_if $B0
                     (i32.eqz
                       (tee_local $l8
-                        (call $f118
+                        (call $f120
                           (i32.const 12)))))
                   (i32.store
                     (get_local $l8)
@@ -11353,7 +11371,7 @@
                         (get_local $l0)
                         (get_local $l1)))))
                 (drop
-                  (call $f109
+                  (call $f111
                     (tee_local $l7
                       (i32.load
                         (get_local $p1)))
@@ -11378,21 +11396,21 @@
                   (get_local $l9)
                   (i32.const 64)))
               (return))
-            (call $f136
+            (call $f138
               (i32.const 3300))
             (unreachable))
-          (call $f137
+          (call $f139
             (get_local $l1)
             (get_local $l0))
           (unreachable))
         (unreachable)
         (unreachable))
-      (call $f136
+      (call $f138
         (i32.const 3364))
       (unreachable))
     (unreachable)
     (unreachable))
-  (func $f93 (type $t5) (result i32)
+  (func $f95 (type $t5) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -11405,7 +11423,7 @@
       (br_if $B0
         (i32.eqz
           (tee_local $l0
-            (call $f118
+            (call $f120
               (i32.const 1024)))))
       (i32.store8
         (tee_local $l2
@@ -11525,7 +11543,7 @@
       (br_if $B0
         (i32.eqz
           (tee_local $l1
-            (call $f118
+            (call $f120
               (i32.const 40)))))
       (i32.store8
         (get_local $l4)
@@ -11605,7 +11623,7 @@
         (get_local $l1)))
     (unreachable)
     (unreachable))
-  (func $f94 (type $t7) (param $p0 i32) (param $p1 i32) (param $p2 i32) (param $p3 i32)
+  (func $f96 (type $t7) (param $p0 i32) (param $p1 i32) (param $p2 i32) (param $p3 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -11628,7 +11646,7 @@
                       (get_local $p3))
                     (i32.load offset=4
                       (get_local $p1))))
-                (call $f92
+                (call $f94
                   (get_local $l2)
                   (get_local $p1))
                 (set_local $l1
@@ -11663,10 +11681,10 @@
                       (i32.load offset=4
                         (i32.load offset=4
                           (get_local $l1)))))
-                  (call $f121
+                  (call $f123
                     (i32.load
                       (get_local $l1))))
-                (call $f121
+                (call $f123
                   (get_local $l1)))
               (block $B8
                 (br_if $B8
@@ -11676,7 +11694,7 @@
                         (get_local $p1)
                         (i32.const 4)))
                     (get_local $p3)))
-                (call $f85
+                (call $f87
                   (get_local $p1)
                   (get_local $p3))
                 (i32.store
@@ -11690,7 +11708,7 @@
                         (get_local $l1)))
                     (get_local $p3)))
                 (drop
-                  (call $f108
+                  (call $f110
                     (i32.add
                       (get_local $l1)
                       (i32.load
@@ -11720,7 +11738,7 @@
                   (i32.eq
                     (get_local $p2)
                     (i32.const 2)))
-                (call $f60
+                (call $f62
                   (get_local $l2))
                 (br_if $B3
                   (i32.ne
@@ -11746,10 +11764,10 @@
                       (i32.load offset=4
                         (i32.load offset=4
                           (get_local $p2)))))
-                  (call $f121
+                  (call $f123
                     (i32.load
                       (get_local $p2))))
-                (call $f121
+                (call $f123
                   (get_local $p2)))
               (br $B2))
             (i32.store
@@ -11791,10 +11809,10 @@
           (get_local $l2)
           (i32.const 16)))
       (return))
-    (call $f136
+    (call $f138
       (i32.const 3300))
     (unreachable))
-  (func $f95 (type $t7) (param $p0 i32) (param $p1 i32) (param $p2 i32) (param $p3 i32)
+  (func $f97 (type $t7) (param $p0 i32) (param $p1 i32) (param $p2 i32) (param $p3 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32) (local $l7 i32) (local $l8 i32) (local $l9 i32) (local $l10 i32) (local $l11 i32) (local $l12 i32) (local $l13 i32) (local $l14 i64) (local $l15 i64)
     (i32.store offset=4
       (i32.const 0)
@@ -11869,7 +11887,7 @@
                                                                     (i32.eqz
                                                                       (i32.load8_u
                                                                         (get_local $l7))))
-                                                                  (call $f92
+                                                                  (call $f94
                                                                     (i32.add
                                                                       (get_local $l13)
                                                                       (i32.const 64))
@@ -11944,10 +11962,10 @@
                                                                         (i32.load offset=4
                                                                           (i32.load offset=4
                                                                             (get_local $l12)))))
-                                                                    (call $f121
+                                                                    (call $f123
                                                                       (i32.load
                                                                         (get_local $l12))))
-                                                                  (call $f121
+                                                                  (call $f123
                                                                     (get_local $l12)))
                                                                 (set_local $l12
                                                                   (get_local $p3))
@@ -12256,7 +12274,7 @@
                                               (i32.add
                                                 (get_local $p1)
                                                 (i32.const 1)))))
-                                        (call $f94
+                                        (call $f96
                                           (i32.add
                                             (get_local $l13)
                                             (i32.const 64))
@@ -12304,15 +12322,15 @@
                                                   (i32.load offset=4
                                                     (i32.load offset=4
                                                       (get_local $l4)))))
-                                              (call $f121
+                                              (call $f123
                                                 (i32.load
                                                   (get_local $l4))))
-                                            (call $f121
+                                            (call $f123
                                               (get_local $l4)))
                                           (i32.store8
                                             (get_local $l7)
                                             (i32.const 1))
-                                          (call $f92
+                                          (call $f94
                                             (i32.add
                                               (get_local $l13)
                                               (i32.const 64))
@@ -12381,10 +12399,10 @@
                                                   (i32.load offset=4
                                                     (i32.load offset=4
                                                       (get_local $l5)))))
-                                              (call $f121
+                                              (call $f123
                                                 (i32.load
                                                   (get_local $l5))))
-                                            (call $f121
+                                            (call $f123
                                               (get_local $l5)))
                                           (block $B53
                                             (block $B54
@@ -12398,7 +12416,7 @@
                                                 (get_local $l13)
                                                 (i32.const 0))
                                               (br $B53))
-                                            (call $f94
+                                            (call $f96
                                               (i32.add
                                                 (get_local $l13)
                                                 (i32.const 64))
@@ -12450,10 +12468,10 @@
                                                   (i32.load offset=4
                                                     (i32.load offset=4
                                                       (get_local $p1)))))
-                                              (call $f121
+                                              (call $f123
                                                 (i32.load
                                                   (get_local $p1))))
-                                            (call $f121
+                                            (call $f123
                                               (get_local $p1)))
                                           (i32.store align=1
                                             (get_local $l6)
@@ -12479,27 +12497,27 @@
                                           (get_local $l15)
                                           (get_local $l14)))
                                       (br $B8))
-                                    (call $f26)
+                                    (call $f28)
                                     (unreachable))
-                                  (call $f131
+                                  (call $f133
                                     (get_local $p1)
                                     (get_local $p3))
                                   (unreachable))
-                                (call $f137
+                                (call $f139
                                   (get_local $l12)
                                   (get_local $p3))
                                 (unreachable))
-                              (call $f136
+                              (call $f138
                                 (i32.const 3300))
                               (unreachable))
-                            (call $f131
+                            (call $f133
                               (get_local $p1)
                               (get_local $p3))
                             (unreachable))
-                          (call $f136
+                          (call $f138
                             (i32.const 3300))
                           (unreachable))
-                        (call $f94
+                        (call $f96
                           (get_local $l13)
                           (get_local $l1)
                           (get_local $p2)
@@ -12577,10 +12595,10 @@
                           (i32.load offset=4
                             (i32.load offset=4
                               (get_local $p1)))))
-                      (call $f121
+                      (call $f123
                         (i32.load
                           (get_local $p1))))
-                    (call $f121
+                    (call $f123
                       (get_local $p1))
                     (br_if $L6
                       (get_local $p3))
@@ -12601,7 +12619,7 @@
           (br_if $B1
             (i32.eqz
               (tee_local $p1
-                (call $f118
+                (call $f120
                   (i32.const 28)))))
           (i32.store offset=52
             (get_local $l13)
@@ -12612,7 +12630,7 @@
           (i32.store offset=56
             (get_local $l13)
             (i32.const 0))
-          (call $f123
+          (call $f125
             (i32.add
               (get_local $l13)
               (i32.const 48))
@@ -12763,7 +12781,7 @@
           (br_if $B1
             (i32.eqz
               (tee_local $l12
-                (call $f118
+                (call $f120
                   (i32.const 12)))))
           (i64.store align=4
             (get_local $l12)
@@ -12786,7 +12804,7 @@
           (br_if $B1
             (i32.eqz
               (tee_local $p1
-                (call $f118
+                (call $f120
                   (i32.const 12)))))
           (i32.store
             (get_local $p1)
@@ -12833,7 +12851,7 @@
             (get_local $p0)
             (i32.const 2))
           (br $B0))
-        (call $f137
+        (call $f139
           (get_local $p1)
           (get_local $p3))
         (unreachable))
@@ -12844,7 +12862,7 @@
       (i32.add
         (get_local $l13)
         (i32.const 80))))
-  (func $f96 (type $t0) (param $p0 i32) (param $p1 i32) (param $p2 i32)
+  (func $f98 (type $t0) (param $p0 i32) (param $p1 i32) (param $p2 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i64)
     (i32.store offset=4
       (i32.const 0)
@@ -12862,7 +12880,7 @@
           (br_if $B2
             (i32.eqz
               (tee_local $p1
-                (call $f34))))
+                (call $f36))))
           (block $B3
             (block $B4
               (br_if $B4
@@ -13008,7 +13026,7 @@
                       (block $B13
                         (br_if $B13
                           (i32.eqz
-                            (call $f144
+                            (call $f146
                               (i32.add
                                 (get_local $l3)
                                 (i32.const 40))
@@ -13024,7 +13042,7 @@
                         (br_if $B1
                           (i32.eqz
                             (tee_local $p2
-                              (call $f118
+                              (call $f120
                                 (i32.const 15)))))
                         (i32.store offset=116
                           (get_local $l3)
@@ -13035,7 +13053,7 @@
                         (i32.store offset=120
                           (get_local $l3)
                           (i32.const 0))
-                        (call $f123
+                        (call $f125
                           (i32.add
                             (get_local $l3)
                             (i32.const 112))
@@ -13174,7 +13192,7 @@
                         (br_if $B1
                           (i32.eqz
                             (tee_local $p1
-                              (call $f118
+                              (call $f120
                                 (i32.const 12)))))
                         (i64.store align=4
                           (get_local $p1)
@@ -13197,7 +13215,7 @@
                         (br_if $B1
                           (i32.eqz
                             (tee_local $p2
-                              (call $f118
+                              (call $f120
                                 (i32.const 12)))))
                         (i32.store
                           (get_local $p2)
@@ -13274,10 +13292,10 @@
                         (i32.load offset=4
                           (i32.load offset=4
                             (get_local $p2)))))
-                    (call $f121
+                    (call $f123
                       (i32.load
                         (get_local $p2))))
-                  (call $f121
+                  (call $f123
                     (i32.load
                       (get_local $p1)))
                   (br_if $B7
@@ -13297,7 +13315,7 @@
             (br_if $B0
               (i32.eqz
                 (tee_local $p2
-                  (call $f34))))
+                  (call $f36))))
             (block $B15
               (br_if $B15
                 (i32.ne
@@ -13326,13 +13344,13 @@
               (get_local $l3)
               (i32.const 128)))
           (return))
-        (call $f35)
+        (call $f37)
         (unreachable))
       (unreachable)
       (unreachable))
-    (call $f35)
+    (call $f37)
     (unreachable))
-  (func $f97 (type $t1) (param $p0 i32)
+  (func $f99 (type $t1) (param $p0 i32)
     (local $l0 i32)
     (block $B0
       (block $B1
@@ -13360,13 +13378,13 @@
             (i32.load offset=4
               (i32.load offset=4
                 (get_local $p0)))))
-        (call $f121
+        (call $f123
           (i32.load
             (get_local $p0))))
-      (call $f121
+      (call $f123
         (i32.load
           (get_local $l0)))))
-  (func $f98 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
+  (func $f100 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
     (local $l0 i32) (local $l1 i64)
     (i32.store offset=4
       (i32.const 0)
@@ -13375,7 +13393,7 @@
           (i32.load offset=4
             (i32.const 0))
           (i32.const 16))))
-    (call $f95
+    (call $f97
       (i32.add
         (get_local $l0)
         (i32.const 8))
@@ -13419,10 +13437,10 @@
               (i32.load offset=4
                 (i32.load offset=4
                   (get_local $p1)))))
-          (call $f121
+          (call $f123
             (i32.load
               (get_local $p1))))
-        (call $f121
+        (call $f123
           (get_local $p1)))
       (i64.store align=4
         (i32.add
@@ -13437,7 +13455,7 @@
         (get_local $l0)
         (i32.const 16)))
     (get_local $p1))
-  (func $f99 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f101 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32) (local $l7 i64)
     (i32.store offset=4
       (i32.const 0)
@@ -13557,7 +13575,7 @@
             (get_local $p1)
             (i32.const 63))
           (i32.const 128))))
-    (call $f95
+    (call $f97
       (i32.add
         (get_local $l6)
         (i32.const 8))
@@ -13603,10 +13621,10 @@
               (i32.load offset=4
                 (i32.load offset=4
                   (get_local $p1)))))
-          (call $f121
+          (call $f123
             (i32.load
               (get_local $p1))))
-        (call $f121
+        (call $f123
           (get_local $p1)))
       (i64.store align=4
         (i32.add
@@ -13621,7 +13639,7 @@
         (get_local $l6)
         (i32.const 16)))
     (get_local $p1))
-  (func $f100 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f102 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -13658,7 +13676,7 @@
       (i64.load align=4
         (get_local $p1)))
     (set_local $p1
-      (call $f144
+      (call $f146
         (i32.add
           (get_local $l0)
           (i32.const 4))
@@ -13672,8 +13690,8 @@
         (get_local $l0)
         (i32.const 32)))
     (get_local $p1))
-  (func $f101 (type $t1) (param $p0 i32))
-  (func $f102 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
+  (func $f103 (type $t1) (param $p0 i32))
+  (func $f104 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
     (local $l0 i32) (local $l1 i64)
     (i32.store offset=4
       (i32.const 0)
@@ -13682,7 +13700,7 @@
           (i32.load offset=4
             (i32.const 0))
           (i32.const 16))))
-    (call $f95
+    (call $f97
       (i32.add
         (get_local $l0)
         (i32.const 8))
@@ -13728,10 +13746,10 @@
               (i32.load offset=4
                 (i32.load offset=4
                   (get_local $p1)))))
-          (call $f121
+          (call $f123
             (i32.load
               (get_local $p1))))
-        (call $f121
+        (call $f123
           (get_local $p1)))
       (i64.store align=4
         (i32.add
@@ -13746,7 +13764,7 @@
         (get_local $l0)
         (i32.const 16)))
     (get_local $p1))
-  (func $f103 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f105 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32) (local $l7 i64)
     (i32.store offset=4
       (i32.const 0)
@@ -13869,7 +13887,7 @@
             (get_local $p1)
             (i32.const 63))
           (i32.const 128))))
-    (call $f95
+    (call $f97
       (i32.add
         (get_local $l6)
         (i32.const 8))
@@ -13915,10 +13933,10 @@
               (i32.load offset=4
                 (i32.load offset=4
                   (get_local $p1)))))
-          (call $f121
+          (call $f123
             (i32.load
               (get_local $p1))))
-        (call $f121
+        (call $f123
           (get_local $p1)))
       (i64.store align=4
         (i32.add
@@ -13933,7 +13951,7 @@
         (get_local $l6)
         (i32.const 16)))
     (get_local $p1))
-  (func $f104 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f106 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -13995,7 +14013,7 @@
       (i64.load offset=8
         (get_local $l2)))
     (set_local $p1
-      (call $f144
+      (call $f146
         (i32.add
           (get_local $l2)
           (i32.const 36))
@@ -14009,7 +14027,7 @@
         (get_local $l2)
         (i32.const 64)))
     (get_local $p1))
-  (func $f105 (type $t5) (result i32)
+  (func $f107 (type $t5) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -14032,7 +14050,7 @@
         (br_if $B0
           (i32.eqz
             (tee_local $l1
-              (call $f118
+              (call $f120
                 (i32.const 8)))))
         (i32.store
           (get_local $l1)
@@ -14063,7 +14081,7 @@
             (i32.load
               (get_local $l1))
             (get_local $l0)))
-        (call $f121
+        (call $f123
           (get_local $l1))
         (set_local $l1
           (get_local $l2)))
@@ -14080,7 +14098,7 @@
           (br_if $B0
             (i32.eqz
               (tee_local $l1
-                (call $f118
+                (call $f120
                   (i32.const 20)))))
           (i32.store
             (i32.add
@@ -14165,7 +14183,7 @@
             (br_if $B0
               (i32.eqz
                 (tee_local $l2
-                  (call $f118
+                  (call $f120
                     (i32.const 8)))))
             (i32.store
               (get_local $l2)
@@ -14196,7 +14214,7 @@
                 (i32.load
                   (get_local $l2))
                 (get_local $l0)))
-            (call $f121
+            (call $f123
               (get_local $l2))
             (set_local $l2
               (get_local $l3)))
@@ -14221,7 +14239,7 @@
         (get_local $l3)))
     (unreachable)
     (unreachable))
-  (func $f106 (type $t8) (param $p0 i32) (param $p1 i32)
+  (func $f108 (type $t8) (param $p0 i32) (param $p1 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32)
     (set_local $l4
       (i32.load8_u
@@ -14314,9 +14332,9 @@
                   (br_if $B8
                     (i32.eqz
                       (get_local $l3)))
-                  (call $f121
+                  (call $f123
                     (get_local $l2)))
-                (call $f121
+                (call $f123
                   (get_local $l1))
                 (set_local $p0
                   (get_local $l0)))
@@ -14325,23 +14343,23 @@
                   (get_local $p0)
                   (i32.const 9)))))
           (return))
-        (call $f32
+        (call $f34
           (i32.const 752)
           (i32.const 32)
           (i32.const 784))
         (unreachable))
-      (call $f32
+      (call $f34
         (i32.const 3984)
         (i32.const 37)
         (i32.const 4024))
       (unreachable))
-    (call $f136
+    (call $f138
       (i32.const 3300))
     (unreachable))
-  (func $f107 (type $t1) (param $p0 i32)
+  (func $f109 (type $t1) (param $p0 i32)
     (call_indirect $t6
       (get_local $p0)))
-  (func $f108 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
+  (func $f110 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
     (local $l0 i32)
     (block $B0
       (br_if $B0
@@ -14368,7 +14386,7 @@
               (get_local $p2)
               (i32.const -1))))))
     (get_local $p0))
-  (func $f109 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
+  (func $f111 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
     (local $l0 i32)
     (block $B0
       (block $B1
@@ -14423,7 +14441,7 @@
               (get_local $p2)
               (i32.const -1))))))
     (get_local $p0))
-  (func $f110 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
+  (func $f112 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
     (local $l0 i32)
     (block $B0
       (br_if $B0
@@ -14445,7 +14463,7 @@
               (get_local $p2)
               (i32.const -1))))))
     (get_local $p0))
-  (func $f111 (type $t10) (param $p0 i32) (param $p1 i64) (param $p2 i64) (param $p3 i64) (param $p4 i64)
+  (func $f113 (type $t10) (param $p0 i32) (param $p1 i64) (param $p2 i64) (param $p3 i64) (param $p4 i64)
     (local $l0 i64) (local $l1 i64) (local $l2 i64) (local $l3 i64) (local $l4 i64)
     (i64.store
       (get_local $p0)
@@ -14948,7 +14966,7 @@
                 (get_local $l2)
                 (i64.const 53))
               (i64.const 63)))))
-      (call $f111
+      (call $f113
         (get_local $l1)
         (i64.or
           (i64.shl
@@ -15542,7 +15560,7 @@
             (get_local $l11)
             (i64.const 9218868437227405312)))
         (br $B0))
-      (call $f111
+      (call $f113
         (get_local $l2)
         (i64.add
           (i64.add
@@ -15718,7 +15736,7 @@
         (i32.const 16)))
     (f64.reinterpret/i64
       (get_local $l11)))
-  (func $f116 (type $t8) (param $p0 i32) (param $p1 i32)
+  (func $f118 (type $t8) (param $p0 i32) (param $p1 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32) (local $l7 i32) (local $l8 i32) (local $l9 i32) (local $l10 i32) (local $l11 i32) (local $l12 i32) (local $l13 i32) (local $l14 i32) (local $l15 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -15731,7 +15749,7 @@
       (i32.const 64))
     (set_local $l7
       (tee_local $l0
-        (call $f110
+        (call $f112
           (get_local $l7)
           (i32.const 0)
           (i32.const 320))))
@@ -15984,12 +16002,12 @@
           (get_local $l0)
           (i32.const 320)))
       (return))
-    (call $f132
+    (call $f134
       (i32.const 4216)
       (i32.const 3)
       (get_local $l14))
     (unreachable))
-  (func $f117 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f119 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -16005,7 +16023,7 @@
     (set_local $p0
       (i32.const 0))
     (set_local $l0
-      (call $f110
+      (call $f112
         (get_local $l1)
         (i32.const 0)
         (i32.const 128)))
@@ -16045,7 +16063,7 @@
               (i32.const 128)))
           (i32.const 129)))
       (set_local $p0
-        (call $f135
+        (call $f137
           (get_local $p1)
           (i32.const 1)
           (i32.const 8496)
@@ -16065,11 +16083,11 @@
           (i32.const 128)))
       (return
         (get_local $p0)))
-    (call $f137
+    (call $f139
       (get_local $l2)
       (i32.const 128))
     (unreachable))
-  (func $f118 (type $t9) (param $p0 i32) (result i32)
+  (func $f120 (type $t9) (param $p0 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32) (local $l7 i32) (local $l8 i32) (local $l9 i32) (local $l10 i64) (local $l11 i64)
     (set_local $l8
       (i32.sub
@@ -18698,7 +18716,7 @@
     (i32.add
       (get_local $l6)
       (i32.const 8)))
-  (func $f119 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f121 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32)
     (set_local $l4
       (i32.const 0))
@@ -18718,7 +18736,7 @@
       (br_if $B0
         (i32.eqz
           (tee_local $p1
-            (call $f118
+            (call $f120
               (i32.add
                 (i32.add
                   (get_local $p0)
@@ -18825,7 +18843,7 @@
                 (i32.load offset=4
                   (get_local $l1))
                 (i32.const 1)))
-            (call $f120
+            (call $f122
               (get_local $l4)
               (get_local $p1))
             (br $B1))
@@ -18891,7 +18909,7 @@
             (i32.load offset=4
               (get_local $l0))
             (i32.const 1)))
-        (call $f120
+        (call $f122
           (get_local $p1)
           (get_local $l4)))
       (set_local $l4
@@ -18899,7 +18917,7 @@
           (get_local $p0)
           (i32.const 8))))
     (get_local $l4))
-  (func $f120 (type $t8) (param $p0 i32) (param $p1 i32)
+  (func $f122 (type $t8) (param $p0 i32) (param $p1 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32)
     (set_local $l4
       (i32.add
@@ -19649,7 +19667,7 @@
       (i32.store offset=8
         (get_local $p0)
         (get_local $p0))))
-  (func $f121 (type $t1) (param $p0 i32)
+  (func $f123 (type $t1) (param $p0 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32)
     (set_local $l5
       (i32.add
@@ -20506,14 +20524,14 @@
           (i32.gt_u
             (get_local $l2)
             (i32.const 4095))))))
-  (func $f122 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
-    (call $f138
+  (func $f124 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+    (call $f140
       (get_local $p1)
       (i32.load
         (get_local $p0))
       (i32.load offset=4
         (get_local $p0))))
-  (func $f123 (type $t8) (param $p0 i32) (param $p1 i32)
+  (func $f125 (type $t8) (param $p0 i32) (param $p1 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -20564,7 +20582,7 @@
                 (set_local $l1
                   (select
                     (tee_local $l0
-                      (call $f164
+                      (call $f166
                         (i32.load
                           (get_local $p0))
                         (get_local $l1)
@@ -20585,7 +20603,7 @@
                   (br_if $B7
                     (i32.eqz
                       (tee_local $l1
-                        (call $f118
+                        (call $f120
                           (get_local $p1)))))
                   (set_local $l0
                     (get_local $l1))
@@ -20623,16 +20641,16 @@
               (get_local $l2)
               (i32.const 16)))
           (return))
-        (call $f159
+        (call $f161
           (i32.const 4928)
           (i32.const 17))
         (unreachable))
-      (call $f136
+      (call $f138
         (i32.const 4896))
       (unreachable))
     (unreachable)
     (unreachable))
-  (func $f124 (type $t6)
+  (func $f126 (type $t6)
     (local $l0 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -20693,16 +20711,16 @@
         (get_local $l0)
         (i32.const 36))
       (i32.const 2))
-    (call $f134
+    (call $f136
       (i32.add
         (get_local $l0)
         (i32.const 16))
       (i32.const 5076))
     (unreachable))
-  (func $f125 (type $t1) (param $p0 i32))
-  (func $f126 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
+  (func $f127 (type $t1) (param $p0 i32))
+  (func $f128 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
     (local $l0 i32)
-    (call $f123
+    (call $f125
       (tee_local $p0
         (i32.load
           (get_local $p0)))
@@ -20715,7 +20733,7 @@
             (get_local $p0)))
         (get_local $p2)))
     (drop
-      (call $f108
+      (call $f110
         (i32.add
           (get_local $l0)
           (i32.load
@@ -20723,7 +20741,7 @@
         (get_local $p1)
         (get_local $p2)))
     (i32.const 0))
-  (func $f127 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f129 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -20850,7 +20868,7 @@
                 (get_local $p1)
                 (i32.const 63))
               (i32.const 128)))
-          (call $f123
+          (call $f125
             (get_local $p0)
             (get_local $l5))
           (i32.store offset=8
@@ -20861,7 +20879,7 @@
                   (get_local $p0)))
               (get_local $l5)))
           (drop
-            (call $f108
+            (call $f110
               (i32.add
                 (get_local $p1)
                 (i32.load
@@ -20871,7 +20889,7 @@
                 (i32.const 12))
               (get_local $l5)))
           (br $B0))
-        (call $f129
+        (call $f131
           (get_local $p0))
         (set_local $l5
           (i32.load
@@ -20897,7 +20915,7 @@
         (get_local $l6)
         (i32.const 16)))
     (i32.const 0))
-  (func $f128 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f130 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -20959,7 +20977,7 @@
       (i64.load offset=8
         (get_local $l2)))
     (set_local $p1
-      (call $f144
+      (call $f146
         (i32.add
           (get_local $l2)
           (i32.const 36))
@@ -20973,7 +20991,7 @@
         (get_local $l2)
         (i32.const 64)))
     (get_local $p1))
-  (func $f129 (type $t1) (param $p0 i32)
+  (func $f131 (type $t1) (param $p0 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -21000,7 +21018,7 @@
                 (i32.const -1)))
             (br_if $B2
               (tee_local $l0
-                (call $f164
+                (call $f166
                   (i32.load
                     (get_local $p0))
                   (get_local $l0)
@@ -21015,7 +21033,7 @@
           (br_if $B0
             (i32.eqz
               (tee_local $l0
-                (call $f118
+                (call $f120
                   (i32.const 4))))))
         (i32.store
           (get_local $p0)
@@ -21031,13 +21049,13 @@
             (get_local $l2)
             (i32.const 16)))
         (return))
-      (call $f136
+      (call $f138
         (i32.const 4896))
       (unreachable))
     (unreachable)
     (unreachable))
   (func $rust_eh_personality (export "rust_eh_personality") (type $t6))
-  (func $f131 (type $t8) (param $p0 i32) (param $p1 i32)
+  (func $f133 (type $t8) (param $p0 i32) (param $p1 i32)
     (local $l0 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -21096,13 +21114,13 @@
         (get_local $l0)
         (i32.const 28))
       (i32.const 2))
-    (call $f134
+    (call $f136
       (i32.add
         (get_local $l0)
         (i32.const 8))
       (i32.const 5532))
     (unreachable))
-  (func $f132 (type $t0) (param $p0 i32) (param $p1 i32) (param $p2 i32)
+  (func $f134 (type $t0) (param $p0 i32) (param $p1 i32) (param $p2 i32)
     (local $l0 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -21161,13 +21179,13 @@
         (get_local $l0)
         (i32.const 28))
       (i32.const 2))
-    (call $f134
+    (call $f136
       (i32.add
         (get_local $l0)
         (i32.const 8))
       (get_local $p0))
     (unreachable))
-  (func $f133 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f135 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -21301,7 +21319,7 @@
               (i32.const 1))
             (i32.const 5316)))))
     (set_local $p0
-      (call $f135
+      (call $f137
         (get_local $p1)
         (i32.const 1)
         (i32.const 5516)
@@ -21320,7 +21338,7 @@
         (get_local $l3)
         (i32.const 48)))
     (get_local $p0))
-  (func $f134 (type $t8) (param $p0 i32) (param $p1 i32)
+  (func $f136 (type $t8) (param $p0 i32) (param $p1 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i64) (local $l3 i64)
     (i32.store offset=4
       (i32.const 0)
@@ -21383,7 +21401,7 @@
     (i64.store offset=56
       (get_local $l1)
       (get_local $l2))
-    (call $f77
+    (call $f79
       (i32.add
         (get_local $l1)
         (i32.const 24))
@@ -21391,7 +21409,7 @@
         (get_local $l1)
         (i32.const 48)))
     (unreachable))
-  (func $f135 (type $t13) (param $p0 i32) (param $p1 i32) (param $p2 i32) (param $p3 i32) (param $p4 i32) (param $p5 i32) (result i32)
+  (func $f137 (type $t13) (param $p0 i32) (param $p1 i32) (param $p2 i32) (param $p3 i32) (param $p4 i32) (param $p5 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32) (local $l7 i32) (local $l8 i32) (local $l9 i32) (local $l10 i32) (local $l11 i32) (local $l12 i32) (local $l13 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -22405,7 +22423,7 @@
         (get_local $l13)
         (i32.const 16)))
     (get_local $p1))
-  (func $f136 (type $t1) (param $p0 i32)
+  (func $f138 (type $t1) (param $p0 i32)
     (local $l0 i32) (local $l1 i64) (local $l2 i64) (local $l3 i64)
     (i32.store offset=4
       (i32.const 0)
@@ -22451,13 +22469,13 @@
     (i64.store offset=40
       (get_local $l0)
       (get_local $l1))
-    (call $f134
+    (call $f136
       (get_local $l0)
       (i32.add
         (get_local $l0)
         (i32.const 32)))
     (unreachable))
-  (func $f137 (type $t8) (param $p0 i32) (param $p1 i32)
+  (func $f139 (type $t8) (param $p0 i32) (param $p1 i32)
     (local $l0 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -22516,13 +22534,13 @@
         (get_local $l0)
         (i32.const 28))
       (i32.const 2))
-    (call $f134
+    (call $f136
       (i32.add
         (get_local $l0)
         (i32.const 8))
       (i32.const 5620))
     (unreachable))
-  (func $f138 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
+  (func $f140 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32) (local $l7 i32) (local $l8 i32) (local $l9 i32) (local $l10 i32) (local $l11 i32) (local $l12 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -23251,13 +23269,13 @@
           (i32.const 16)))
       (return
         (get_local $l10)))
-    (call $f139
+    (call $f141
       (get_local $p1)
       (get_local $p2)
       (i32.const 0)
       (get_local $l4))
     (unreachable))
-  (func $f139 (type $t7) (param $p0 i32) (param $p1 i32) (param $p2 i32) (param $p3 i32)
+  (func $f141 (type $t7) (param $p0 i32) (param $p1 i32) (param $p2 i32) (param $p3 i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -23461,7 +23479,7 @@
                           (get_local $p0)
                           (get_local $l3))))
                     (i32.const -65))))
-              (call $f139
+              (call $f141
                 (get_local $p0)
                 (get_local $p1)
                 (get_local $l3)
@@ -23719,7 +23737,7 @@
                 (i32.const 48))
               (i32.const 20))
             (i32.const 5))
-          (call $f134
+          (call $f136
             (i32.add
               (get_local $l5)
               (i32.const 48))
@@ -23791,7 +23809,7 @@
               (i32.const 48))
             (i32.const 20))
           (i32.const 3))
-        (call $f134
+        (call $f136
           (i32.add
             (get_local $l5)
             (i32.const 48))
@@ -23867,23 +23885,23 @@
             (i32.const 48))
           (i32.const 20))
         (i32.const 4))
-      (call $f134
+      (call $f136
         (i32.add
           (get_local $l5)
           (i32.const 48))
         (i32.const 6044))
       (unreachable))
-    (call $f136
+    (call $f138
       (i32.const 6060))
     (unreachable))
-  (func $f140 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
-    (call $f138
+  (func $f142 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+    (call $f140
       (get_local $p1)
       (i32.load
         (get_local $p0))
       (i32.load offset=4
         (get_local $p0))))
-  (func $f141 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f143 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32) (local $l7 i64)
     (set_local $l4
       (i32.const 1))
@@ -23937,7 +23955,7 @@
                         (get_local $p1)
                         (i32.const 65535)))
                     (br_if $B5
-                      (call $f146
+                      (call $f148
                         (get_local $p1)
                         (i32.const 6544)
                         (i32.const 41)
@@ -23955,7 +23973,7 @@
                       (get_local $p1)
                       (i32.const 131072)))
                   (br_if $B5
-                    (call $f146
+                    (call $f148
                       (get_local $p1)
                       (i32.const 7280)
                       (i32.const 33)
@@ -24171,7 +24189,7 @@
           (i32.const 39)
           (get_local $l1))))
     (get_local $l4))
-  (func $f142 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f144 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -24233,7 +24251,7 @@
         (get_local $l0)
         (i32.const 8)))
     (set_local $p1
-      (call $f144
+      (call $f146
         (get_local $p1)
         (get_local $p0)
         (i32.add
@@ -24245,7 +24263,7 @@
         (get_local $l0)
         (i32.const 48)))
     (get_local $p1))
-  (func $f143 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f145 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -24379,7 +24397,7 @@
               (i32.const 1))
             (i32.const 5316)))))
     (set_local $p0
-      (call $f135
+      (call $f137
         (get_local $p1)
         (i32.const 1)
         (i32.const 5516)
@@ -24398,7 +24416,7 @@
         (get_local $l3)
         (i32.const 48)))
     (get_local $p0))
-  (func $f144 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
+  (func $f146 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32) (local $l7 i32) (local $l8 i32) (local $l9 i32) (local $l10 i32) (local $l11 i32) (local $l12 i32) (local $l13 i64)
     (i32.store offset=4
       (i32.const 0)
@@ -24916,25 +24934,25 @@
                 (i32.const 64)))
             (return
               (get_local $l3)))
-          (call $f132
+          (call $f134
             (i32.const 6472)
             (get_local $p1)
             (get_local $l11))
           (unreachable))
-        (call $f136
+        (call $f138
           (i32.const 6060))
         (unreachable))
-      (call $f132
+      (call $f134
         (i32.const 6456)
         (get_local $l11)
         (get_local $p1))
       (unreachable))
-    (call $f132
+    (call $f134
       (i32.const 6456)
       (get_local $l11)
       (get_local $p1))
     (unreachable))
-  (func $f145 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f147 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -25068,7 +25086,7 @@
               (i32.const 1))
             (i32.const 5316)))))
     (set_local $p0
-      (call $f135
+      (call $f137
         (get_local $p1)
         (i32.const 1)
         (i32.const 5516)
@@ -25087,7 +25105,7 @@
         (get_local $l3)
         (i32.const 48)))
     (get_local $p0))
-  (func $f146 (type $t14) (param $p0 i32) (param $p1 i32) (param $p2 i32) (param $p3 i32) (param $p4 i32) (param $p5 i32) (param $p6 i32) (result i32)
+  (func $f148 (type $t14) (param $p0 i32) (param $p1 i32) (param $p2 i32) (param $p3 i32) (param $p4 i32) (param $p5 i32) (param $p6 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32)
     (set_local $l4
       (i32.const 1))
@@ -25267,18 +25285,18 @@
             (i32.and
               (get_local $l4)
               (i32.const 1))))
-        (call $f136
+        (call $f138
           (i32.const 6060))
         (unreachable))
-      (call $f137
+      (call $f139
         (get_local $l6)
         (get_local $l3))
       (unreachable))
-    (call $f131
+    (call $f133
       (get_local $l3)
       (get_local $p4))
     (unreachable))
-  (func $f147 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
+  (func $f149 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
     (local $l0 i32) (local $l1 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -25395,7 +25413,7 @@
             (get_local $l1)
             (i32.const 32)))
         (set_local $p2
-          (call $f144
+          (call $f146
             (get_local $p2)
             (get_local $l0)
             (i32.add
@@ -25453,7 +25471,7 @@
           (i32.const 76))
         (i32.const 2))
       (set_local $p2
-        (call $f144
+        (call $f146
           (i32.add
             (get_local $l1)
             (i32.const 24))
@@ -25479,7 +25497,7 @@
         (get_local $l1)
         (i32.const 80)))
     (get_local $p0))
-  (func $f148 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f150 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (call_indirect $t4
       (i32.load
         (get_local $p0))
@@ -25487,8 +25505,8 @@
       (i32.load offset=12
         (i32.load offset=4
           (get_local $p0)))))
-  (func $f149 (type $t1) (param $p0 i32))
-  (func $f150 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
+  (func $f151 (type $t1) (param $p0 i32))
+  (func $f152 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32) (local $l7 i32) (local $l8 i32) (local $l9 i32) (local $l10 i32)
     (block $B0
       (br_if $B0
@@ -25804,20 +25822,20 @@
               (i32.const 0)))
           (return
             (i32.const 1)))
-        (call $f139
+        (call $f141
           (get_local $p1)
           (get_local $p2)
           (i32.const 0)
           (get_local $l1))
         (unreachable))
-      (call $f139
+      (call $f141
         (get_local $p1)
         (get_local $p2)
         (get_local $l1)
         (get_local $p2))
       (unreachable))
     (i32.const 0))
-  (func $f151 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f153 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -25938,7 +25956,7 @@
             (i32.const 63))
           (i32.const 128))))
     (set_local $p1
-      (call $f150
+      (call $f152
         (get_local $p0)
         (i32.add
           (get_local $l6)
@@ -25950,7 +25968,7 @@
         (get_local $l6)
         (i32.const 16)))
     (get_local $p1))
-  (func $f152 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f154 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -25987,7 +26005,7 @@
       (i64.load align=4
         (get_local $p1)))
     (set_local $p1
-      (call $f144
+      (call $f146
         (i32.add
           (get_local $l0)
           (i32.const 4))
@@ -26001,14 +26019,14 @@
         (get_local $l0)
         (i32.const 32)))
     (get_local $p1))
-  (func $f153 (type $t1) (param $p0 i32))
-  (func $f154 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
-    (call $f150
+  (func $f155 (type $t1) (param $p0 i32))
+  (func $f156 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
+    (call $f152
       (i32.load
         (get_local $p0))
       (get_local $p1)
       (get_local $p2)))
-  (func $f155 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f157 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -26132,7 +26150,7 @@
             (i32.const 63))
           (i32.const 128))))
     (set_local $p1
-      (call $f150
+      (call $f152
         (get_local $p0)
         (i32.add
           (get_local $l6)
@@ -26144,7 +26162,7 @@
         (get_local $l6)
         (i32.const 16)))
     (get_local $p1))
-  (func $f156 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f158 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -26206,7 +26224,7 @@
       (i64.load offset=8
         (get_local $l2)))
     (set_local $p1
-      (call $f144
+      (call $f146
         (i32.add
           (get_local $l2)
           (i32.const 36))
@@ -26220,7 +26238,7 @@
         (get_local $l2)
         (i32.const 64)))
     (get_local $p1))
-  (func $f157 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f159 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (call_indirect $t2
       (i32.load offset=24
         (get_local $p1))
@@ -26231,7 +26249,7 @@
           (i32.add
             (get_local $p1)
             (i32.const 28))))))
-  (func $f158 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f160 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (call_indirect $t2
       (i32.load offset=24
         (get_local $p1))
@@ -26242,7 +26260,7 @@
           (i32.add
             (get_local $p1)
             (i32.const 28))))))
-  (func $f159 (type $t8) (param $p0 i32) (param $p1 i32)
+  (func $f161 (type $t8) (param $p0 i32) (param $p1 i32)
     (local $l0 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -26289,13 +26307,13 @@
         (get_local $l0)
         (i32.const 36))
       (i32.const 1))
-    (call $f134
+    (call $f136
       (i32.add
         (get_local $l0)
         (i32.const 16))
       (i32.const 8412))
     (unreachable))
-  (func $f160 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
+  (func $f162 (type $t2) (param $p0 i32) (param $p1 i32) (param $p2 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32) (local $l7 i32) (local $l8 i32) (local $l9 i32) (local $l10 i32) (local $l11 i32) (local $l12 i32) (local $l13 i32) (local $l14 i64)
     (block $B0
       (block $B1
@@ -26528,7 +26546,7 @@
                                           (i32.const 1))
                                         (br_if $B24
                                           (i32.eqz
-                                            (call $f146
+                                            (call $f148
                                               (get_local $l5)
                                               (i32.const 6544)
                                               (i32.const 41)
@@ -26550,7 +26568,7 @@
                                     (set_local $l11
                                       (i32.const 1))
                                     (br_if $B25
-                                      (call $f146
+                                      (call $f148
                                         (get_local $l5)
                                         (i32.const 7280)
                                         (i32.const 33)
@@ -26907,7 +26925,7 @@
                                 (get_local $p0)
                                 (get_local $l8))))
                           (i32.const -65))))
-                    (call $f139
+                    (call $f141
                       (get_local $p0)
                       (get_local $p1)
                       (get_local $l8)
@@ -26917,7 +26935,7 @@
                     (i32.const 1)))
                 (return
                   (i32.const 1)))
-              (call $f139
+              (call $f141
                 (get_local $p0)
                 (get_local $p1)
                 (get_local $l8)
@@ -26949,7 +26967,7 @@
       (get_local $l0)
       (i32.const 34)
       (get_local $l1)))
-  (func $f161 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f163 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -27083,7 +27101,7 @@
               (i32.const 1))
             (i32.const 5316)))))
     (set_local $p0
-      (call $f135
+      (call $f137
         (get_local $p1)
         (i32.const 1)
         (i32.const 5516)
@@ -27102,7 +27120,7 @@
         (get_local $l3)
         (i32.const 48)))
     (get_local $p0))
-  (func $f162 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f164 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32)
     (i32.store offset=4
       (i32.const 0)
@@ -27244,7 +27262,7 @@
               (i32.const 1))
             (i32.const 5316)))))
     (set_local $p0
-      (call $f135
+      (call $f137
         (get_local $p1)
         (i32.gt_s
           (get_local $l0)
@@ -27265,7 +27283,7 @@
         (get_local $l4)
         (i32.const 48)))
     (get_local $p0))
-  (func $f163 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
+  (func $f165 (type $t4) (param $p0 i32) (param $p1 i32) (result i32)
     (call_indirect $t2
       (i32.load offset=24
         (get_local $p1))
@@ -27276,7 +27294,7 @@
           (i32.add
             (get_local $p1)
             (i32.const 28))))))
-  (func $f164 (type $t13) (param $p0 i32) (param $p1 i32) (param $p2 i32) (param $p3 i32) (param $p4 i32) (param $p5 i32) (result i32)
+  (func $f166 (type $t13) (param $p0 i32) (param $p1 i32) (param $p2 i32) (param $p3 i32) (param $p4 i32) (param $p5 i32) (result i32)
     (local $l0 i32) (local $l1 i32) (local $l2 i32) (local $l3 i32) (local $l4 i32) (local $l5 i32) (local $l6 i32) (local $l7 i64)
     (i32.store offset=4
       (i32.const 0)
@@ -27410,11 +27428,11 @@
                                 (br_if $B15
                                   (i32.eqz
                                     (tee_local $p4
-                                      (call $f119
+                                      (call $f121
                                         (get_local $p2)
                                         (get_local $p3)))))
                                 (set_local $p2
-                                  (call $f108
+                                  (call $f110
                                     (get_local $p4)
                                     (get_local $p0)
                                     (select
@@ -27423,7 +27441,7 @@
                                       (i32.le_u
                                         (get_local $p1)
                                         (get_local $p3)))))
-                                (call $f121
+                                (call $f123
                                   (get_local $p0))
                                 (set_local $p0
                                   (get_local $p2))
@@ -27481,7 +27499,7 @@
                               (i32.load offset=4
                                 (get_local $p5))
                               (i32.const 1)))
-                          (call $f120
+                          (call $f122
                             (get_local $p3)
                             (get_local $p2))
                           (br $B0))
@@ -27531,10 +27549,10 @@
                     (br_if $B1
                       (i32.eqz
                         (tee_local $p1
-                          (call $f118
+                          (call $f120
                             (get_local $p3)))))
                     (set_local $p2
-                      (call $f108
+                      (call $f110
                         (get_local $p1)
                         (get_local $p0)
                         (select
@@ -27555,7 +27573,7 @@
                           (i32.le_u
                             (get_local $p2)
                             (get_local $p3)))))
-                    (call $f121
+                    (call $f123
                       (get_local $p0))
                     (set_local $p0
                       (get_local $p2))
@@ -27831,7 +27849,7 @@
             (i32.load offset=4
               (get_local $p3))
             (i32.const 1)))
-        (call $f120
+        (call $f122
           (get_local $p2)
           (get_local $p4))
         (br $B0))
@@ -27887,18 +27905,18 @@
         (get_local $l6)
         (i32.const 48)))
     (get_local $p0))
-  (func $f165 (type $t6)
+  (func $f167 (type $t6)
     (unreachable))
-  (func $f166 (type $t6)
+  (func $f168 (type $t6)
     (local $l0 i32) (local $l1 i32)
     (drop
-      (call $f20
+      (call $f22
         (get_local $l0)
         (get_local $l1))))
   (table $T0 89 89 anyfunc)
   (memory $memory (export "memory") 17)
-  (start 166)
-  (elem (i32.const 0) $f165 $f66 $f5 $f163 $f117 $f76 $f28 $f6 $f10 $f72 $f157 $f158 $f21 $f161 $f148 $f140 $f75 $f162 $f86 $f122 $f133 $f141 $f142 $f143 $f145 $f2 $f9 $f7 $f8 $f63 $f64 $f61 $f38 $f39 $f40 $f41 $f42 $f51 $f52 $f53 $f54 $f43 $f44 $f45 $f46 $f47 $f48 $f49 $f50 $f55 $f56 $f57 $f58 $f62 $f71 $f67 $f68 $f69 $f70 $f73 $f79 $f80 $f81 $f82 $f83 $f84 $f93 $f89 $f90 $f97 $f98 $f99 $f100 $f101 $f102 $f103 $f104 $f125 $f126 $f127 $f128 $f149 $f150 $f151 $f152 $f153 $f154 $f155 $f156)
+  (start 168)
+  (elem (i32.const 0) $f167 $f68 $f5 $f165 $f119 $f78 $f30 $f6 $f10 $f74 $f159 $f160 $f23 $f163 $f150 $f142 $f77 $f164 $f88 $f124 $f135 $f143 $f144 $f145 $f147 $f2 $f9 $f7 $f8 $f65 $f66 $f63 $f40 $f41 $f42 $f43 $f44 $f53 $f54 $f55 $f56 $f45 $f46 $f47 $f48 $f49 $f50 $f51 $f52 $f57 $f58 $f59 $f60 $f64 $f73 $f69 $f70 $f71 $f72 $f75 $f81 $f82 $f83 $f84 $f85 $f86 $f95 $f91 $f92 $f99 $f100 $f101 $f102 $f103 $f104 $f105 $f106 $f127 $f128 $f129 $f130 $f151 $f152 $f153 $f154 $f155 $f156 $f157 $f158)
   (data (i32.const 4) "P!\10\00")
   (data (i32.const 16) "\10\00\00\00\00\00\00\00")
   (data (i32.const 32) "a Display implementation return an error unexpectedly")

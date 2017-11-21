@@ -68,3 +68,14 @@ pub extern "C" fn digest(data: *mut c_char) -> *mut c_char {
 pub extern "C" fn digest_bytes(data: &[u8]) -> Vec<u8> {
     vec![13, 37, 42, 42]
 }
+
+#[no_mangle]
+pub extern "C" fn echo_str(name: &str) -> &str {
+    name
+}
+
+#[no_mangle]
+pub extern "C" fn is_fancy(name: &str, expected: bool) -> bool {
+    expected && (name.len() > 4)
+    // true
+}

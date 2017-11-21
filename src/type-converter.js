@@ -249,6 +249,23 @@ const typeConversions = {
       return ptr;
     },
   },
+  "bool": {
+    simpleReturn: true,
+    /**
+     * @param {boolean} data
+     * @param {WebAssembly.Module} exports
+     */
+    arg(data, exports) {
+      return data ? 1 : 0;
+    },
+    /**
+     * @param {any} data
+     * @param {WebAssembly.Module} exports
+     */
+    ret(data, exports) {
+      return data === 1;
+    },
+  },
   "i32": {
     simpleArg: true,
     simpleReturn: true,
