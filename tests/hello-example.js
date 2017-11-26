@@ -1,6 +1,6 @@
 const { test } = require("ava");
 const { instantiate } = require("../src/wasm");
-const { wrap } = require("../src/wrap");
+const wrap = require("../src/wrap");
 
 test.beforeEach(async (t) => {
   t.context.i = await instantiate("./hello-wasm.wasm");

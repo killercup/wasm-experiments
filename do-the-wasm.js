@@ -2,7 +2,7 @@
 
 const { debug, info, error } = require("./src/utils");
 const { instantiate } = require("./src/wasm");
-const { wrap } = require("./src/wrap");
+const wrap = require("./src/wrap");
 
 /**
  * Kill process when condition isn't met
