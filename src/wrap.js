@@ -20,7 +20,7 @@ const { typeConversions } = require("./type-converter");
  *
  * @todo Add `deallocList` or something like that to free memory
  */
-exports.wrap = function wrap(exports, fnIdent, argTypes = [], returnType = "()") {
+module.exports = function wrap(exports, fnIdent, argTypes = [], returnType = "()") {
   // @ts-ignore -- Indexing a WASM module actually works
   const fn = exports[fnIdent];
 

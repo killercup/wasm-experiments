@@ -26,9 +26,11 @@
     "text-encoding": "^0.6.4"
   },
   "devDependencies": {
+    "@types/tmp": "0.0.33",
     "ava": "^0.23.0",
-    "typescript": "^2.6.1",
-    "tslint": "^5.8.0"
+    "tmp": "0.0.33",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.1"
   },
   "ava": {
     "files": [
