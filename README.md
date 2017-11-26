@@ -197,5 +197,5 @@ Et voilá, we can SHA1 all the strings now!
 ### Debugging
 
 You can enable more logging output by setting the environment variable `LOG_LEVEL`.
-The levels are error (`1`), warn, info, debug, trace (`5`).
+The levels are error (`0`), warn, info, debug, trace (`5`).
 The default is `2` (info).
