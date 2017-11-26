@@ -1,5 +1,7 @@
 /**
  * Test helpers to read Rust and output WASM
+ *
+ * @typedef {string} Version
  */
 
 const tmp = require("tmp");
@@ -38,15 +40,23 @@ function createTmpDir(opts = {}) {
 }
 
 /**
+ * Compile Rust source code to WASM
+ *
  * @param {string} rustSource
+ * @param {{[name: string]: Version}} dependencies A map of dependencies,
+ *   e.g., `{ sha1: "0.2" }`
  * @return {Promise<Buffer>} WASM source
  */
-async function rustToWasm(rustSource) {
+async function rustToWasm(rustSource, dependencies = {}) {
   const tmpDir = await createTmpDir({ unsafeCleanup: true });
   try {
     debug("creating rust project in", tmpDir.path);
     const binaryName = "bar";
-    await tmpDir.createFile("Cargo.toml", `
+    debug(dependencies);
+    const dependenciesToml = Object.keys(dependencies)
+      .map((dep) => `"${dep}" = "${dependencies[dep]}"`);
+
+    const cargoToml = `
       [package]
       name = "foo"
       version = "0.1.0"
@@ -54,7 +64,12 @@ async function rustToWasm(rustSource) {
       [[bin]]
       name = "${binaryName}"
       path = "main.rs"
-    `);
+
+      [dependencies]
+      ${dependenciesToml}
+    `;
+    debug("Cargo.toml", cargoToml);
+    await tmpDir.createFile("Cargo.toml", cargoToml);
 
     await tmpDir.createFile("main.rs",
       `// auto-generated
@@ -84,12 +99,20 @@ async function rustToWasm(rustSource) {
 }
 
 /**
+ * Compile Rust source code and load the WASM
  *
  * @param {string} rustSource
+ * @param {{[name: string]: Version}} dependencies A map of dependencies,
+ *   e.g., `{ sha1: "0.2" }`
  * @param {object} imports
+ * @return {Promise<WebAssembly.Instance>}
  */
-module.exports = async function loadRust(rustSource, imports = {}) {
-  const wasm = await rustToWasm(rustSource);
+module.exports = async function loadRust(
+  rustSource,
+  dependencies = {},
+  imports = {},
+) {
+  const wasm = await rustToWasm(rustSource, dependencies);
   const wasmModule = await WebAssembly.compile(wasm);
   const instance = await new WebAssembly.Instance(wasmModule, imports);
   return instance;

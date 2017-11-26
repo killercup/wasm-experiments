@@ -28,7 +28,7 @@ test(`Hello UTF-8!`, (t) => {
 });
 
 test(`sha1`, (t) => {
-  const digest = wrap(t.context.i.exports, "digest", ["CStr"], "CStr");
+  const digest = wrap(t.context.i.exports, "digest", ["&str"], "String");
   t.deepEqual(digest("foobar"), "8843d7f92416211de9ebb963ff4ce28125932878");
 });
 
