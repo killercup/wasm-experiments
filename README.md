@@ -4,13 +4,10 @@ Some experiments after seeing [Rust PR #45905].
 
 ## Stuff I did
 
-- Follow the instructions on [Rust PR #45905] to get a rustc that can target WASM
-  - `./configure --target=wasm32-unknown-unknown --set llvm.experimental-targets=WebAssembly`
-  - `./x.py build`
-  - Link the new WASM32 toolchain with `rustup toolchain link wasm32 build/x86_64-apple-darwin/stage2/`
+- `rustup target add wasm32-unknown-unknown --toolchain nightly`
 - Install `wasm-gc` with `cargo install --git https://github.com/alexcrichton/wasm-gc`
 - Install some more tools (incl. wasm2wat) with `git clone https://github.com/WebAssembly/wabt && cd wabt && make install`
-- Compile the code in this repo with `cargo +wasm32 build --target=wasm32-unknown-unknown --release`
+- Compile the code in this repo with `cargo +nightly build --target=wasm32-unknown-unknown --release`
   - This should put get you some `.wasm` files: `ls -lah target/wasm32-unknown-unknown/release/`
   - Alternatively, you can just use the `*.wasm` in this repo
 - Run it with `node ./do-the-wasm.js`
