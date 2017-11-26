@@ -52,16 +52,10 @@ pub extern "C" fn dealloc(ptr: *mut c_void, cap: usize) {
 }
 
 #[no_mangle]
-pub extern "C" fn digest(data: *mut c_char) -> *mut c_char {
-    unsafe {
-        let data = CStr::from_ptr(data);
-
-        let mut m = Sha1::new();
-        m.update(data.to_bytes());
-        let dgst = m.digest().to_string();
-        let s = CString::new(dgst).unwrap();
-        s.into_raw()
-    }
+pub extern "C" fn digest(data: &str) -> String {
+    let mut m = Sha1::new();
+    m.update(data.as_bytes());
+    m.digest().to_string()
 }
 
 #[no_mangle]
