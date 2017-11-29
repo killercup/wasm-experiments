@@ -17,8 +17,8 @@ async function sampleAdd() {
 async function sampleEcho() {
   const context = await instantiate("./hello-wasm.wasm");
   const echo = wrap(context.exports, "echo_str", ["&str"], "&str");
-  echo("Banana") // "Banana"
-  echo("Apple") // "Apple"
+  echo("Banana"); // "Banana"
+  echo("Apple"); // "Apple"
   echo(""); // ""
   echo("L͞o̕r̕em͟ ip̕s͏u͢m");  // "L͞o̕r̕em͟ ip̕s͏u͢m"
 }
