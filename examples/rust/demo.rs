@@ -1,10 +1,6 @@
-extern crate sha1;
-
 use std::mem;
 use std::ffi::{CString, CStr};
 use std::os::raw::{c_char, c_void};
-
-use sha1::Sha1;
 
 fn main() {
     println!("Hello World!");
@@ -16,24 +12,9 @@ pub extern "C" fn add(x: i32, y: i32) -> i32 {
 }
 
 #[no_mangle]
-pub fn time_string() -> String {
-    String::from("Es ist fünf vor Zwölf!")
-}
-
-#[no_mangle]
-pub fn time_str() -> &'static str {
-    "Es ist fünf vor Zwölf!!!"
-}
-
-#[no_mangle]
 pub extern "C" fn time() -> *mut c_char {
     let s = CString::new("Es ist fünf vor Zwölf!!").unwrap();
     s.into_raw()
-}
-
-#[no_mangle]
-pub extern "C" fn hi(name: *mut c_char) -> *mut c_char {
-    name
 }
 
 #[no_mangle]
@@ -49,18 +30,6 @@ pub extern "C" fn dealloc(ptr: *mut c_void, cap: usize) {
     unsafe  {
         let _buf = Vec::from_raw_parts(ptr, 0, cap);
     }
-}
-
-#[no_mangle]
-pub extern "C" fn digest(data: &str) -> String {
-    let mut m = Sha1::new();
-    m.update(data.as_bytes());
-    m.digest().to_string()
-}
-
-#[no_mangle]
-pub extern "C" fn digest_bytes(data: &[u8]) -> Vec<u8> {
-    vec![13, 37, 42, 42]
 }
 
 #[no_mangle]
