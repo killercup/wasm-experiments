@@ -3,6 +3,8 @@ const loadRust = require("../src/compile");
 const wrap = require("../src/wrap");
 
 const allocFunction = `
+  use std::mem;
+  use std::os::raw::{c_char, c_void};
   #[no_mangle]
   pub extern "C" fn alloc(size: usize) -> *mut c_void {
       let mut buf = Vec::with_capacity(size);
@@ -47,9 +49,7 @@ test(`2 + 2 = 42`, async (t) => {
 
 test(`Hello Jan-Erik`, async (t) => {
   const instance = await loadRust(`
-    use std::mem;
     use std::ffi::CStr;
-    use std::os::raw::{c_char, c_void};
     ${allocFunction}
     #[no_mangle]
     pub extern "C" fn hi(name: *mut c_char) -> *mut c_char {
@@ -62,8 +62,6 @@ test(`Hello Jan-Erik`, async (t) => {
 
 test(`Hello UTF-8!`, async (t) => {
   const instance = await loadRust(`
-    use std::mem;
-    use std::os::raw::{c_char, c_void};
     ${allocFunction}
     #[no_mangle]
     pub extern "C" fn hi(name: *mut c_char) -> *mut c_char {
@@ -77,9 +75,6 @@ test(`Hello UTF-8!`, async (t) => {
 test(`sha1`, async (t) => {
   const instance = await loadRust(`
     extern crate sha1;
-
-    use std::mem;
-    use std::os::raw::c_void;
 
     use sha1::Sha1;
 
@@ -98,8 +93,6 @@ test(`sha1`, async (t) => {
 
 test(`string slice`, async (t) => {
   const instance = await loadRust(`
-    use std::mem;
-    use std::os::raw::{c_char, c_void};
     ${allocFunction}
     #[no_mangle]
     pub fn time_str() -> &'static str {
@@ -112,8 +105,6 @@ test(`string slice`, async (t) => {
 
 test(`owned string`, async (t) => {
   const instance = await loadRust(`
-    use std::mem;
-    use std::os::raw::{c_char, c_void};
     ${allocFunction}
     #[no_mangle]
     pub fn time_string() -> String {
@@ -126,8 +117,6 @@ test(`owned string`, async (t) => {
 
 test(`slices and Vecs`, async (t) => {
   const instance = await loadRust(`
-    use std::mem;
-    use std::os::raw::{c_char, c_void};
     ${allocFunction}
     #[no_mangle]
     pub extern "C" fn digest_bytes(data: &[u8]) -> Vec<u8> {
@@ -141,8 +130,6 @@ test(`slices and Vecs`, async (t) => {
 
 test(`str echo`, async (t) => {
   const instance = await loadRust(`
-    use std::mem;
-    use std::os::raw::{c_char, c_void};
     ${allocFunction}
     #[no_mangle]
     pub extern "C" fn echo_str(name: &str) -> &str {
@@ -158,8 +145,6 @@ test(`str echo`, async (t) => {
 
 test(`boolean`, async (t) => {
   const instance = await loadRust(`
-    use std::mem;
-    use std::os::raw::{c_char, c_void};
     ${allocFunction}
     #[no_mangle]
     pub extern "C" fn is_fancy(name: &str, expected: bool) -> bool {
@@ -175,8 +160,6 @@ test(`boolean`, async (t) => {
 
 test(`slice roundtrip`, async (t) => {
   const instance = await loadRust(`
-    use std::mem;
-    use std::os::raw::{c_char, c_void};
     ${allocFunction}
     ${addFunction}
   `);
