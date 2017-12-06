@@ -51,33 +51,28 @@ async function rustToWasm(rustSource, dependencies = {}) {
   const tmpDir = await createTmpDir({ unsafeCleanup: true });
   try {
     debug("creating rust project in", tmpDir.path);
-    const binaryName = "bar";
+    const moduleName = "bar";
     debug(dependencies);
     const dependenciesToml = Object.keys(dependencies)
       .map((dep) => `"${dep}" = "${dependencies[dep]}"`);
 
     const cargoToml = `
       [package]
-      name = "foo"
+      name = "${moduleName}"
       version = "0.1.0"
 
-      [[bin]]
-      name = "${binaryName}"
-      path = "main.rs"
+      [lib]
+      path = "lib.rs"
+      crate-type = ["cdylib"]
 
       [dependencies]
       ${dependenciesToml}
-
-      [profile.release]
-      opt-level = "s"
     `;
     debug("Cargo.toml", cargoToml);
     await tmpDir.createFile("Cargo.toml", cargoToml);
 
-    await tmpDir.createFile("main.rs",
+    await tmpDir.createFile("lib.rs",
       `// auto-generated
-
-      fn main() {}
 
       ${rustSource}
     `);
@@ -90,7 +85,7 @@ async function rustToWasm(rustSource, dependencies = {}) {
 
     debug("compiling done. reading WASM file");
     const wasm = await readFile(
-      join(tmpDir.path, "target", "wasm32-unknown-unknown", "release", `${binaryName}.wasm`),
+      join(tmpDir.path, "target", "wasm32-unknown-unknown", "release", `${moduleName}.wasm`),
     );
 
     return wasm;
