@@ -67,9 +67,9 @@ function extractSlice(memory, inPointer) {
  * @returns {Pointer} Pointer to `[Pointer, number]` pair
  */
 function newSlice(memory, alloc, data) {
-  const memView = new Uint8Array(memory.buffer);
   const len = data.length;
   const sliceData = alloc(len);
+  const memView = new Uint8Array(memory.buffer);
 
   for (let i = 0; i < len; i++) {
     memView[sliceData + i] = data[i];

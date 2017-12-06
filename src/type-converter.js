@@ -129,11 +129,11 @@ const typeConversions = {
       ensure(memory, "You need to export the main memory to pass strings to WASM");
       ensure(typeof data === "string", "Can only allocate a string for, well, a string");
 
-      const memView = new Uint8Array(memory.buffer);
       const utf8Encoder = new TextEncoder("UTF-8");
       const stringBuffer = utf8Encoder.encode(data);
       const len = stringBuffer.length;
       const ptr = alloc(len + 1);
+      const memView = new Uint8Array(memory.buffer);
 
       for (let i = 0; i < len; i++) {
         memView[ptr + i] = stringBuffer[i];
