@@ -67,6 +67,9 @@ async function rustToWasm(rustSource, dependencies = {}) {
 
       [dependencies]
       ${dependenciesToml}
+
+      [profile.release]
+      opt-level = "s"
     `;
     debug("Cargo.toml", cargoToml);
     await tmpDir.createFile("Cargo.toml", cargoToml);
