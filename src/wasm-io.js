@@ -105,6 +105,54 @@ function getSliceData(memory, pointer, length) {
 }
 
 /**
+ * Create a slice of `[ptr, len]` from data (by allocating a buffer)
+ *
+ * @param {WebAssembly.Memory} memory
+ * @param {Float32Array} data
+ * @param {(length: number) => Pointer} alloc
+ * @returns {Pointer} Pointer to `[Pointer, number]` pair
+ */
+function newF32Slice(memory, alloc, data) {
+  const len = data.length;
+  const sliceData = alloc(len * 4);
+  const memView = new Float32Array(memory.buffer);
+
+  for (let i = 0; i < len; i++) {
+    memView[sliceData + i] = data[i];
+  }
+
+  const ptr = alloc(2 * POINTER_WIDTH);
+  writeI32(memory, ptr, sliceData);
+  writeI32(memory, ptr + POINTER_WIDTH, len);
+
+  return ptr;
+}
+
+/**
+ * @param {WebAssembly.Memory} memory
+ * @param {Pointer} pointer
+ * @param {number} length
+ * @return {Float32Array}
+ */
+function getF32SliceData(memory, pointer, length) {
+  /**
+   * @param {Pointer} ptr
+   * @param {number} len
+   */
+  const getData = function*(ptr, len) {
+    const memView = new Float32Array(memory.buffer, pointer);
+    for (let index = 0; index < len; index++) {
+      if (memView[index] === undefined) {
+        throw new Error(`Tried to read undef mem at ${ptr}`);
+      }
+      yield memView[index];
+    }
+  };
+
+  return new Float32Array(getData(pointer, length));
+}
+
+/**
  * Get Rust String
  *
  * @param {WebAssembly.Memory} memory
@@ -122,7 +170,9 @@ function getStr(memory, pointer, length) {
 module.exports = {
   POINTER_WIDTH,
   extractSlice,
+  getF32SliceData,
   getSliceData,
   getStr,
+  newF32Slice,
   newSlice,
 };

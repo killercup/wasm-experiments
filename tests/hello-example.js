@@ -128,6 +128,19 @@ test(`slices and Vecs`, async (t) => {
     new Uint8Array([13, 37, 42, 42]));
 });
 
+test(`float vecs`, async (t) => {
+  const instance = await loadRust(`
+    ${allocFunction}
+    #[no_mangle]
+    pub extern "C" fn digest_floats(data: &[u8]) -> Vec<f32> {
+        vec![13., 37., 42., 42.]
+    }
+  `);
+  const digest = wrap(instance.exports, "digest_floats", ["&[u8]"], "Vec<f32>");
+  t.deepEqual(digest(new Uint8Array([0x00, 0x00, 0x00, 0x00])),
+    new Float32Array([13, 37, 42, 42]));
+});
+
 test(`str echo`, async (t) => {
   const instance = await loadRust(`
     ${allocFunction}

@@ -1,5 +1,6 @@
 const { ensure, unimplemented } = require("./utils");
-const { newSlice, extractSlice, getSliceData, getStr, POINTER_WIDTH } = require("./wasm-io");
+const { newSlice, extractSlice, getSliceData, getStr,
+  POINTER_WIDTH, newF32Slice, getF32SliceData } = require("./wasm-io");
 const { TextDecoder, TextEncoder } = require("text-encoding");
 
 /**
@@ -12,6 +13,8 @@ const { TextDecoder, TextEncoder } = require("text-encoding");
 const typeConversions = {
   "&[u8]": {
     /**
+     * Copy &[u8] arguments into shared memory before passing to Rust
+     *
      * @param {Uint8Array} data
      * @param {WebAssembly.Module} exports
      */
@@ -26,6 +29,8 @@ const typeConversions = {
       return newSlice(memory, alloc, data);
     },
     /**
+     * Copy &[u8] return values from shared memory on return from Rust
+     *
      * @param {Pointer} data
      * @param {WebAssembly.Module} exports
      * @return {Uint8Array}
@@ -38,6 +43,8 @@ const typeConversions = {
       return getSliceData(memory, ptr, len);
     },
     /**
+     * Allocate memory for mutable return parameters; used before calling Rust
+     *
      * @param {Array<any>} args
      * @param {WebAssembly.Module} exports
      * @return {Pointer}
@@ -188,6 +195,50 @@ const typeConversions = {
       // Actually, just read it like a slice, we copy it anyway, so the capacity doesn't matter
       const [ptr, len] = extractSlice(memory, data);
       return getStr(memory, ptr, len);
+    },
+    /**
+     * @param {Array<any>} args
+     * @param {WebAssembly.Module} exports
+     * @return {Pointer}
+     */
+    outParam(args, exports) {
+      // @ts-ignore -- yes accessing these exports works
+      const { alloc, memory } = exports;
+      ensure(alloc, "You need to export an `alloc` function to get strings from WASM");
+      ensure(memory, "You need to export the main memory to get strings from WASM");
+
+      const ptr = alloc(3 * POINTER_WIDTH);
+      args.unshift(ptr);
+      return ptr;
+    },
+  },
+  "Vec<f32>": {
+    /**
+     * @param {Float32Array} data
+     * @param {WebAssembly.Module} exports
+     */
+    arg(data, exports) {
+      ensure(data instanceof Float32Array, "Can only use `Float32Array` as `Vec<f32>`");
+
+      // @ts-ignore -- yes accessing these exports works
+      const { alloc, memory } = exports;
+      ensure(alloc, "You need to export an `alloc` function to get strings from WASM");
+      ensure(memory, "You need to export the main memory to get strings from WASM");
+
+      return newF32Slice(memory, alloc, data);
+    },
+    /**
+     * @param {Pointer} data
+     * @param {WebAssembly.Module} exports
+     * @return {Float32Array}
+     */
+    ret(data, exports) {
+      // @ts-ignore -- yes accessing these exports works
+      const { memory } = exports;
+      ensure(memory, "You need to export the main memory to pass strings to WASM");
+      // Actually, just read it like a slice, we copy it anyway, so the capacity doesn't matter
+      const [ptr, len] = extractSlice(memory, data);
+      return getF32SliceData(memory, ptr, len);
     },
     /**
      * @param {Array<any>} args
