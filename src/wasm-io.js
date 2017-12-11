@@ -89,19 +89,7 @@ function newSlice(memory, alloc, data) {
  * @return {Uint8Array}
  */
 function getSliceData(memory, pointer, length) {
-  /**
-   * @param {Pointer} ptr
-   * @param {number} len
-   */
-  const getData = function*(ptr, len) {
-    const memView = new Uint8Array(memory.buffer);
-    for (let index = 0; index < len; index++) {
-      if (memView[ptr] === undefined) { throw new Error(`Tried to read undef mem at ${ptr}`); }
-      yield memView[ptr + index];
-    }
-  };
-
-  return new Uint8Array(getData(pointer, length));
+  return new Uint8Array(memory.buffer, pointer, length);
 }
 
 /**
@@ -129,30 +117,6 @@ function newF32Slice(memory, alloc, data) {
 }
 
 /**
- * @param {WebAssembly.Memory} memory
- * @param {Pointer} pointer
- * @param {number} length
- * @return {Float32Array}
- */
-function getF32SliceData(memory, pointer, length) {
-  /**
-   * @param {Pointer} ptr
-   * @param {number} len
-   */
-  const getData = function*(ptr, len) {
-    const memView = new Float32Array(memory.buffer, pointer);
-    for (let index = 0; index < len; index++) {
-      if (memView[index] === undefined) {
-        throw new Error(`Tried to read undef mem at ${ptr}`);
-      }
-      yield memView[index];
-    }
-  };
-
-  return new Float32Array(getData(pointer, length));
-}
-
-/**
  * Get Rust String
  *
  * @param {WebAssembly.Memory} memory
@@ -170,8 +134,6 @@ function getStr(memory, pointer, length) {
 module.exports = {
   POINTER_WIDTH,
   extractSlice,
-  getF32SliceData,
-  getSliceData,
   getStr,
   newF32Slice,
   newSlice,

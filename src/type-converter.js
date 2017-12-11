@@ -1,6 +1,5 @@
 const { ensure, unimplemented } = require("./utils");
-const { newSlice, extractSlice, getSliceData, getStr,
-  POINTER_WIDTH, newF32Slice, getF32SliceData } = require("./wasm-io");
+const { newF32Slice, newSlice, extractSlice, getStr, POINTER_WIDTH } = require("./wasm-io");
 const { TextDecoder, TextEncoder } = require("text-encoding");
 
 /**
@@ -40,7 +39,7 @@ const typeConversions = {
       const { memory } = exports;
       ensure(memory, "You need to export the main memory to pass strings to WASM");
       const [ptr, len] = extractSlice(memory, data);
-      return getSliceData(memory, ptr, len);
+      return new Uint8Array(memory.buffer, ptr, len);
     },
     /**
      * Allocate memory for mutable return parameters; used before calling Rust
@@ -238,7 +237,7 @@ const typeConversions = {
       ensure(memory, "You need to export the main memory to pass strings to WASM");
       // Actually, just read it like a slice, we copy it anyway, so the capacity doesn't matter
       const [ptr, len] = extractSlice(memory, data);
-      return getF32SliceData(memory, ptr, len);
+      return new Float32Array(memory.buffer, ptr, len);
     },
     /**
      * @param {Array<any>} args
@@ -282,7 +281,7 @@ const typeConversions = {
       ensure(memory, "You need to export the main memory to pass strings to WASM");
       // Actually, just read it like a slice, we copy it anyway, so the capacity doesn't matter
       const [ptr, len] = extractSlice(memory, data);
-      return getSliceData(memory, ptr, len);
+      return new Uint8Array(memory.buffer, ptr, len);
     },
     /**
      * @param {Array<any>} args
