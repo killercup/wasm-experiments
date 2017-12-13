@@ -1,8 +1,8 @@
 {
-  "name": "hello-wasm",
-  "version": "1.0.0",
-  "description": "Some experiments after seeing Rust PR #45905.",
-  "main": "do-the-wasm.js",
+  "name": "kaffeerost",
+  "version": "0.0.1",
+  "description": "Experimental utilities for integrating Rust with WebAssembly",
+  "main": "index.js",
   "scripts": {
     "rust-sample": "make --directory=examples/rust && ava examples/rust/test.js",
     "pretest": "tsc --noEmit --project jsconfig.json && tslint --project jsconfig.json",
