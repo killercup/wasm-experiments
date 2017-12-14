@@ -1,5 +1,5 @@
 const { ensure, unimplemented } = require("./utils");
-const { newF32Slice, newSlice, extractSlice, getStr, POINTER_WIDTH } = require("./wasm-io");
+const { newF32Slice, newSlice, newU16Slice, extractSlice, getStr, POINTER_WIDTH } = require("./wasm-io");
 const { TextDecoder, TextEncoder } = require("text-encoding");
 
 /**
@@ -268,12 +268,12 @@ const typeConversions = {
       ensure(alloc, "You need to export an `alloc` function to get strings from WASM");
       ensure(memory, "You need to export the main memory to get strings from WASM");
 
-      return newSlice(memory, alloc, data);
+      return newU16Slice(memory, alloc, data);
     },
     /**
      * @param {Pointer} data
      * @param {WebAssembly.Module} exports
-     * @return {Uint8Array}
+     * @return {Uint16Array}
      */
     ret(data, exports) {
       // @ts-ignore -- yes accessing these exports works
