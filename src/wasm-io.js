@@ -59,6 +59,35 @@ function extractSlice(memory, inPointer) {
 }
 
 /**
+ * Retrieve `[ptr, len]` from position `offset` in `memory`
+ *
+ * @param {WebAssembly.Memory} memory
+ * @param {Pointer} inPointer
+ * @returns {[Pointer, number]}
+ */
+function extractVectorSlice(memory, inPointer) {
+  /**
+   * @param {Uint8Array} bytes
+   */
+  const iterToI32 = (bytes) => {
+    const view = new DataView(bytes.buffer);
+    return view.getUint32(0, true);
+  };
+
+  /**
+   * @param {number} ptr
+   */
+  const getI32 = function(ptr) {
+    return new Uint8Array(memory.buffer).slice(ptr, ptr + POINTER_WIDTH);
+  };
+
+  const outPointer = iterToI32(getI32(inPointer));
+  const length = iterToI32(getI32(inPointer + POINTER_WIDTH * 2));
+
+  return [outPointer, length];
+}
+
+/**
  * Create a slice of `[ptr, len]` from data (by allocating a buffer)
  *
  * @param {WebAssembly.Memory} memory
@@ -158,6 +187,7 @@ function getStr(memory, pointer, length) {
 module.exports = {
   POINTER_WIDTH,
   extractSlice,
+  extractVectorSlice,
   getStr,
   newF32Slice,
   newSlice,

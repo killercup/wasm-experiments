@@ -1,5 +1,5 @@
 const { ensure, unimplemented } = require("./utils");
-const { newF32Slice, newSlice, newU16Slice, extractSlice, getStr, POINTER_WIDTH } = require("./wasm-io");
+const { newF32Slice, newSlice, newU16Slice, extractSlice, extractVectorSlice, getStr, POINTER_WIDTH } = require("./wasm-io");
 const { TextDecoder, TextEncoder } = require("text-encoding");
 
 /**
@@ -236,7 +236,7 @@ const typeConversions = {
       const { memory } = exports;
       ensure(memory, "You need to export the main memory to pass strings to WASM");
       // Actually, just read it like a slice, we copy it anyway, so the capacity doesn't matter
-      const [ptr, len] = extractSlice(memory, data);
+      const [ptr, len] = extractVectorSlice(memory, data);
       return new Float32Array(memory.buffer, ptr, len);
     },
     /**
@@ -280,7 +280,7 @@ const typeConversions = {
       const { memory } = exports;
       ensure(memory, "You need to export the main memory to pass strings to WASM");
       // Actually, just read it like a slice, we copy it anyway, so the capacity doesn't matter
-      const [ptr, len] = extractSlice(memory, data);
+      const [ptr, len] = extractVectorSlice(memory, data);
       return new Uint16Array(memory.buffer, ptr, len);
     },
     /**
@@ -324,7 +324,7 @@ const typeConversions = {
       const { memory } = exports;
       ensure(memory, "You need to export the main memory to pass strings to WASM");
       // Actually, just read it like a slice, we copy it anyway, so the capacity doesn't matter
-      const [ptr, len] = extractSlice(memory, data);
+      const [ptr, len] = extractVectorSlice(memory, data);
       return new Uint8Array(memory.buffer, ptr, len);
     },
     /**
