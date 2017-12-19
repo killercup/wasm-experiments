@@ -169,6 +169,31 @@ function newU16Slice(memory, alloc, data) {
   return ptr;
 }
 
+
+/**
+ * Create a slice of `[ptr, len]` from data (by allocating a buffer)
+ *
+ * @param {WebAssembly.Memory} memory
+ * @param {Float32Array} data
+ * @param {(length: number) => Pointer} alloc
+ * @returns {Pointer} Pointer to `[Pointer, number]` pair
+ */
+function newU32Slice(memory, alloc, data) {
+  const len = data.length;
+  const sliceData = alloc(len * 4);
+  const memView = new Uint32Array(memory.buffer);
+
+  for (let i = 0; i < len; i++) {
+    memView[sliceData + i] = data[i];
+  }
+
+  const ptr = alloc(2 * POINTER_WIDTH);
+  writeI32(memory, ptr, sliceData);
+  writeI32(memory, ptr + POINTER_WIDTH, len);
+
+  return ptr;
+}
+
 /**
  * Get Rust String
  *
@@ -191,4 +216,5 @@ module.exports = {
   getStr,
   newF32Slice,
   newSlice,
+  newU32Slice,
 };

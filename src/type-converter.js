@@ -1,5 +1,5 @@
 const { ensure, unimplemented } = require("./utils");
-const { newF32Slice, newSlice, newU16Slice, extractSlice, extractVectorSlice, getStr, POINTER_WIDTH } = require("./wasm-io");
+const { newF32Slice, newSlice, newU16Slice, newU32Slice, extractSlice, extractVectorSlice, getStr, POINTER_WIDTH } = require("./wasm-io");
 const { TextDecoder, TextEncoder } = require("text-encoding");
 
 /**
@@ -255,6 +255,50 @@ const typeConversions = {
       return ptr;
     },
   },
+  "Vec<u32>": {
+    /**
+     * @param {Uint32Array} data
+     * @param {WebAssembly.Module} exports
+     */
+    arg(data, exports) {
+      ensure(data instanceof Uint32Array, "Can only use `Uint32Array` as `&[u32]`");
+
+      // @ts-ignore -- yes accessing these exports works
+      const { alloc, memory } = exports;
+      ensure(alloc, "You need to export an `alloc` function to get strings from WASM");
+      ensure(memory, "You need to export the main memory to get strings from WASM");
+
+      return newU32Slice(memory, alloc, data);
+    },
+    /**
+     * @param {Pointer} data
+     * @param {WebAssembly.Module} exports
+     * @return {Uint16Array}
+     */
+    ret(data, exports) {
+      // @ts-ignore -- yes accessing these exports works
+      const { memory } = exports;
+      ensure(memory, "You need to export the main memory to pass strings to WASM");
+      // Actually, just read it like a slice, we copy it anyway, so the capacity doesn't matter
+      const [ptr, len] = extractVectorSlice(memory, data);
+      return new Uint32Array(memory.buffer, ptr, len);
+    },
+    /**
+     * @param {Array<any>} args
+     * @param {WebAssembly.Module} exports
+     * @return {Pointer}
+     */
+    outParam(args, exports) {
+      // @ts-ignore -- yes accessing these exports works
+      const { alloc, memory } = exports;
+      ensure(alloc, "You need to export an `alloc` function to get strings from WASM");
+      ensure(memory, "You need to export the main memory to get strings from WASM");
+
+      const ptr = alloc(3 * POINTER_WIDTH);
+      args.unshift(ptr);
+      return ptr;
+    },
+  },
   "Vec<u16>": {
     /**
      * @param {Uint16Array} data
@@ -361,6 +405,46 @@ const typeConversions = {
     },
   },
   "i32": {
+    simpleArg: true,
+    simpleReturn: true,
+    /**
+     * @param {number} data
+     * @param {WebAssembly.Module} exports
+     * @return {number}
+     */
+    arg(data, exports) {
+      return data;
+    },
+    /**
+     * @param {number} data
+     * @param {WebAssembly.Module} exports
+     * @return {number}
+     */
+    ret(data, exports) {
+      return data;
+    },
+  },
+  "u32": {
+    simpleArg: true,
+    simpleReturn: true,
+    /**
+     * @param {number} data
+     * @param {WebAssembly.Module} exports
+     * @return {number}
+     */
+    arg(data, exports) {
+      return data;
+    },
+    /**
+     * @param {number} data
+     * @param {WebAssembly.Module} exports
+     * @return {number}
+     */
+    ret(data, exports) {
+      return data;
+    },
+  },
+  "f32": {
     simpleArg: true,
     simpleReturn: true,
     /**
