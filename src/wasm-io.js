@@ -169,12 +169,11 @@ function newU16Slice(memory, alloc, data) {
   return ptr;
 }
 
-
 /**
  * Create a slice of `[ptr, len]` from data (by allocating a buffer)
  *
  * @param {WebAssembly.Memory} memory
- * @param {Float32Array} data
+ * @param {Uint32Array} data
  * @param {(length: number) => Pointer} alloc
  * @returns {Pointer} Pointer to `[Pointer, number]` pair
  */
