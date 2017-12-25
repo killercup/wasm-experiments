@@ -59,6 +59,35 @@ function extractSlice(memory, inPointer) {
 }
 
 /**
+ * Retrieve `[ptr, len]` from position `offset` in `memory`
+ *
+ * @param {WebAssembly.Memory} memory
+ * @param {Pointer} inPointer
+ * @returns {[Pointer, number]}
+ */
+function extractVectorSlice(memory, inPointer) {
+  /**
+   * @param {Uint8Array} bytes
+   */
+  const iterToI32 = (bytes) => {
+    const view = new DataView(bytes.buffer);
+    return view.getUint32(0, true);
+  };
+
+  /**
+   * @param {number} ptr
+   */
+  const getI32 = function(ptr) {
+    return new Uint8Array(memory.buffer).slice(ptr, ptr + POINTER_WIDTH);
+  };
+
+  const outPointer = iterToI32(getI32(inPointer));
+  const length = iterToI32(getI32(inPointer + POINTER_WIDTH * 2));
+
+  return [outPointer, length];
+}
+
+/**
  * Create a slice of `[ptr, len]` from data (by allocating a buffer)
  *
  * @param {WebAssembly.Memory} memory
@@ -89,19 +118,79 @@ function newSlice(memory, alloc, data) {
  * @return {Uint8Array}
  */
 function getSliceData(memory, pointer, length) {
-  /**
-   * @param {Pointer} ptr
-   * @param {number} len
-   */
-  const getData = function*(ptr, len) {
-    const memView = new Uint8Array(memory.buffer);
-    for (let index = 0; index < len; index++) {
-      if (memView[ptr] === undefined) { throw new Error(`Tried to read undef mem at ${ptr}`); }
-      yield memView[ptr + index];
-    }
-  };
+  return new Uint8Array(memory.buffer, pointer, length);
+}
 
-  return new Uint8Array(getData(pointer, length));
+/**
+ * Create a slice of `[ptr, len]` from data (by allocating a buffer)
+ *
+ * @param {WebAssembly.Memory} memory
+ * @param {Float32Array} data
+ * @param {(length: number) => Pointer} alloc
+ * @returns {Pointer} Pointer to `[Pointer, number]` pair
+ */
+function newF32Slice(memory, alloc, data) {
+  const len = data.length;
+  const sliceData = alloc(len * 4);
+  const memView = new Float32Array(memory.buffer);
+
+  for (let i = 0; i < len; i++) {
+    memView[sliceData + i] = data[i];
+  }
+
+  const ptr = alloc(2 * POINTER_WIDTH);
+  writeI32(memory, ptr, sliceData);
+  writeI32(memory, ptr + POINTER_WIDTH, len);
+
+  return ptr;
+}
+
+/**
+ * Create a slice of `[ptr, len]` from data (by allocating a buffer)
+ *
+ * @param {WebAssembly.Memory} memory
+ * @param {Float32Array} data
+ * @param {(length: number) => Pointer} alloc
+ * @returns {Pointer} Pointer to `[Pointer, number]` pair
+ */
+function newU16Slice(memory, alloc, data) {
+  const len = data.length;
+  const sliceData = alloc(len * 2);
+  const memView = new Uint16Array(memory.buffer);
+
+  for (let i = 0; i < len; i++) {
+    memView[sliceData + i] = data[i];
+  }
+
+  const ptr = alloc(2 * POINTER_WIDTH);
+  writeI32(memory, ptr, sliceData);
+  writeI32(memory, ptr + POINTER_WIDTH, len);
+
+  return ptr;
+}
+
+/**
+ * Create a slice of `[ptr, len]` from data (by allocating a buffer)
+ *
+ * @param {WebAssembly.Memory} memory
+ * @param {Uint32Array} data
+ * @param {(length: number) => Pointer} alloc
+ * @returns {Pointer} Pointer to `[Pointer, number]` pair
+ */
+function newU32Slice(memory, alloc, data) {
+  const len = data.length;
+  const sliceData = alloc(len * 4);
+  const memView = new Uint32Array(memory.buffer);
+
+  for (let i = 0; i < len; i++) {
+    memView[sliceData + i] = data[i];
+  }
+
+  const ptr = alloc(2 * POINTER_WIDTH);
+  writeI32(memory, ptr, sliceData);
+  writeI32(memory, ptr + POINTER_WIDTH, len);
+
+  return ptr;
 }
 
 /**
@@ -122,7 +211,9 @@ function getStr(memory, pointer, length) {
 module.exports = {
   POINTER_WIDTH,
   extractSlice,
-  getSliceData,
+  extractVectorSlice,
   getStr,
+  newF32Slice,
   newSlice,
+  newU32Slice,
 };
